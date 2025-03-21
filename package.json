@@ -12,14 +12,23 @@
         "@shufo/prettier-plugin-blade": "^1.9",
         "@tailwindcss/forms": "^0.5",
         "@tailwindcss/typography": "^0.5",
-        "@tailwindcss/vite": "^4.0",
+        "@tailwindcss/vite": "^4.0.15",
         "alpinejs": "^3.0",
+        "autoprefixer": "^10.4.21",
         "axios": "^1.7",
         "laravel-vite-plugin": "^1.0",
         "lodash": "^4.0",
+        "postcss": "^8.5.3",
         "prettier": "^3.0",
         "prettier-plugin-tailwindcss": "^0.6",
-        "tailwindcss": "^4.0",
+        "tailwindcss": "^4.0.15",
         "vite": "^6.0"
-    }
+    },
+    "name": "kirby-mecenas",
+    "version": "1.0.0",
+    "description": "```sh git clone git@github.com:beebmx/kirby-starterkit.git cd kirby-starterkit cp .env.example .env composer install npm install npm run production ```",
+    "main": "vite.config.js",
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
 }

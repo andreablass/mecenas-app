@@ -1,0 +1,61 @@
+title: Home
+
+sections:
+  content:
+    type: fields
+    fields:
+      main_image:
+        label: Imagen Principal
+        type: files
+        layout: cards
+        max: 1
+      logo:
+        label: Logo
+        type: files
+        layout: cards
+        max: 1
+      description:
+        label: Descripción
+        type: textarea
+      buttons:
+        label: Botones
+        type: structure
+        fields:
+          text:
+            label: Texto
+            type: text
+          link:
+            label: Enlace
+            type: url
+      schedule:
+        label: Horario
+        type: structure
+        fields:
+          day:
+            label: Día
+            type: text
+          hours:
+            label: Horario
+            type: text
+      location:
+        label: Dirección
+        type: text
+      social:
+        label: Redes Sociales
+        type: structure
+        fields:
+          icon:
+            label: Ícono
+            type: select
+            options:
+              facebook: Facebook
+              instagram: Instagram
+              twitter: Twitter
+              google: Google 
+              x: X
+          link:
+            label: Enlace
+            type: url
+      share:
+        label: Compartir
+        type: url

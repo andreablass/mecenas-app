@@ -2,4 +2,8 @@ Title: Error
 
 ----
 
+Text: Error | 404
+
+----
+
 Uuid: idmFkmveblLksMfm

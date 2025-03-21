@@ -1,0 +1,7 @@
+title: Error
+fields:
+  text:
+    label: Mensaje de Error
+    type: textarea
+    
+    
