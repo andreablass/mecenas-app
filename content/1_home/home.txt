@@ -36,6 +36,18 @@ Schedule:
 - 
   day: miércoles
   hours: '6 pm - 1 am'
+- 
+  day: jueves
+  hours: '6 pm - 1 am'
+- 
+  day: viernes
+  hours: '6 pm - 1 am'
+- 
+  day: sábado
+  hours: '6 pm - 1 am'
+- 
+  day: domingo
+  hours: '6 pm - 1 am'
 
 ----
 

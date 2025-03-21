@@ -13,7 +13,7 @@
     @endif
 </head>
 
-<body>
+<body class="bg-[#d9cbac] ">
         <main class="pt-16 flex-1 p-4">
             {{ $slot }}
         </main>

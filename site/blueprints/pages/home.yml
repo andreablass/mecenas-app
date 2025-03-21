@@ -17,9 +17,12 @@ sections:
       description:
         label: Descripción
         type: textarea
-      buttons:
+      menuButton:
         label: Botones
-        type: structure
+        text: "Comprar ahora"
+      reservasionesButton:
+        label: Botones
+        text: "Comprar ahora"
         fields:
           text:
             label: Texto
