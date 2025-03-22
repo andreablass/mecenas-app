@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
     <meta charset="utf-8" />
@@ -13,7 +13,7 @@
     @endif
 </head>
 
-<body class="bg-[#d9cbac] ">
+<body class="bg-[#d9cbac] dark:bg-black">
         <main class="pt-16 flex-1 p-4">
             {{ $slot }}
         </main>

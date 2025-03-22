@@ -2,5 +2,7 @@
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
 @source "../../site/templates";
+@custom-variant dark (&:where(.dark, .dark *));
+
 
 [x-cloak] { display: none !important; }
