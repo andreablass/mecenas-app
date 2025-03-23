@@ -2,7 +2,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-    <div class="flex flex-col justify-center items-center text-black p-6 overflow-y-auto">
+    <div class="flex flex-col justify-center items-center text-black p-6 overflow-y-auto dark:text-white">
         <div class="flex flex-col justify-center items-center w-full max-w-full">
             @if ($image = $page->main_image()->toFile())
             <img src="{{ $image->url() }}" alt="Image" class="w-45 h-32 sm:w-40 sm:h-40 mx-auto">
@@ -18,7 +18,7 @@
 
         <div class="mt-6 flex flex-row gap-4 justify-center w-full max-w-full mx-auto px-4 sm:px-6">
             @foreach ($page->buttons()->toStructure() as $button)
-            <a href="{{ $button->link() }}" class="bg-black text-[#d9cbac] px-6 py-3 rounded-sm shadow-md hover:bg-gray-800 text-center w-auto">
+            <a href="{{ $button->link() }}" class="bg-black dark:text-[#d9cbac] text-[#d9cbac] dark:text-white px-6 py-3 rounded-sm shadow-md hover:bg-gray-800 text-center w-auto">
                 {{ $button->text() }}
             </a>
             @endforeach
