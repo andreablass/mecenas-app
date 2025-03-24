@@ -2,28 +2,41 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-    <div class="flex flex-col justify-center items-center text-black p-6 overflow-y-auto dark:text-white">
-        <div class="flex flex-col justify-center items-center w-full max-w-full">
-            @if ($image = $page->main_image()->toFile())
-            <img src="{{ $image->url() }}" alt="Image" class="w-45 h-32 sm:w-40 sm:h-40 mx-auto">
-            @endif
-            @if ($logo = $page->logo()->toFile())
-            <img src="{{ $logo->url() }}" alt="Logo" class="w-80 sm:w-80 mx-auto mt-4">
-            @endif
+    <div class="flex flex-col justify-center items-center p-6 overflow-y-auto">
+        <div class="flex flex-col justify-center items-center p-6 overflow-y-auto">
+            <div class="flex flex-col justify-center items-center w-full max-w-full">
+                @if ($imageLight = $page->main_image()->toFile())
+                @if ($imageDark = $page->darkMain_image()->toFile())
+                <img :src="darkMode ? '{{ $imageDark->url() }}' : '{{ $imageLight->url() }}'" alt="Image" class="w-45 h-32 sm:w-40 sm:h-40 mx-auto ">
+                @else
+                <img src="{{ $imageLight->url() }}" alt="Image" class="w-45 h-32 sm:w-40 sm:h-40 mx-auto">
+                @endif
+                @endif
+
+                @if ($logoLight = $page->logo()->toFile())
+                @if ($logoDark = $page->darkLogo()->toFile())
+                <img :src="darkMode ? '{{ $logoDark->url() }}' : '{{ $logoLight->url() }}'" alt="Logo" class="w-80 sm:w-80 mx-auto mt-4">
+                @else
+                <img src="{{ $logoLight->url() }}" alt="Logo" class="w-80 sm:w-80 mx-auto mt-4">
+                @endif
+                @endif
+            </div>
         </div>
+
+
 
         <div class="mt-6 max-w-full text-center mx-auto px-4 sm:px-6 w-full">
             <p class="text-sm sm:text-lg md:text-xl">{!! $page->description()->kirbytext() !!}</p>
         </div>
 
         <div class="mt-6 flex flex-row gap-4 justify-center w-full max-w-full mx-auto px-4 sm:px-6">
-            @foreach ($page->buttons()->toStructure() as $button)
-            <a href="{{ $button->link() }}" class="bg-black dark:text-[#d9cbac] text-[#d9cbac] dark:text-white px-6 py-3 rounded-sm shadow-md hover:bg-gray-800 text-center w-auto">
-                {{ $button->text() }}
+            <a href="{{ $page->menuButtonLink() }}" class="dark:border-[#d9cbac] dark:text-[#d9cbac] bg-transparent border-2 border-black text-black px-12 py-3 rounded-md text-center w-full sm:w-auto">
+                {{ $page->menuButtonText() }}
             </a>
-            @endforeach
+            <a href="{{ $page->reservasionesButtonLink() }}" class="dark:bg-[#d9cbac] dark:text-black bg-black text-[#d9cbac] px-12 py-3 rounded-md text-center w-full sm:w-auto">
+                {{ $page->reservasionesButtonText() }}
+            </a>
         </div>
-
 
         <div class="mt-6 max-w-full text-center mx-auto px-4 sm:px-6 w-full">
             <h2 class="text-2xl sm:text-3xl font-bold">Horario</h2>
@@ -58,7 +71,7 @@
                 </a>
                 @endforeach
 
-                <a href="{{ $page->share() }}" class="text-xl sm:text-2xl hover:text-gray-700 transition">
+                <a class="text-xl sm:text-2xl hover:text-gray-700 transition">
                     <i class="fas fa-share-alt text-2xl"></i>
                 </a>
             </div>

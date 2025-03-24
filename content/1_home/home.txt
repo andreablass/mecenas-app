@@ -10,18 +10,31 @@ Logo: - file://8FE7aaKwR7rx6BWO
 
 ----
 
+Darkmain-image: - file://dNEQKMsqnhsC7kiE
+
+----
+
+Darklogo: - file://nJq62GHfjZnk62aQ
+
+----
+
 Description: Movidos por el deseo de tener control creativo absoluto, desde la materia prima hasta los sabores finales, decidimos hacer todo en casa. Elaboramos nuestros propios licores, producimos vinos fortificados y nos aliamos con destilerías locales. Para acompañar, diseñamos un menú de antojitos callejeros, perfectos para disfrutarse con las manos.
 
 ----
 
-Buttons:
+Menubuttontext: menú
 
-- 
-  text: menú
-  link: ""
-- 
-  text: reservaciones
-  link: ""
+----
+
+Reservasionesbuttontext: reservas
+
+----
+
+Menubuttonlink: 
+
+----
+
+Reservasionesbuttonlink: 
 
 ----
 
@@ -67,6 +80,16 @@ Social:
 ----
 
 Share: http://kirby-mecenas.test/panel/pages/home
+
+----
+
+Buttons:
+
+- 
+  _id: 2297ca5b-9529-4b72-b3c9-ff24dd0bdb81
+  label: ""
+  link: ""
+  text: menú
 
 ----
 

@@ -14,22 +14,33 @@ sections:
         type: files
         layout: cards
         max: 1
+      darkMain_image:
+        label: Imagen en modo oscuro
+        type: files
+        layout: cards
+        max: 1
+      darkLogo:
+        label: Logo en modo oscuro
+        type: files
+        layout: cards
+        max: 1
       description:
         label: Descripción
         type: textarea
-      menuButton:
-        label: Botones
-        text: "Comprar ahora"
-      reservasionesButton:
-        label: Botones
-        text: "Comprar ahora"
-        fields:
-          text:
-            label: Texto
-            type: text
-          link:
-            label: Enlace
-            type: url
+      menuButtonText:
+        label: Texto del Botón de Menú
+        type: text
+        default: "Menú"
+      reservasionesButtonText:
+        label: Texto del Botón de Reservas
+        type: text
+        default: "Reservar Ahora"
+      menuButtonLink:
+        label: Enlace del Botón de Menú
+        type: url
+      reservasionesButtonLink:
+        label: Enlace del Botón de Reservas
+        type: url
       schedule:
         label: Horario
         type: structure
