@@ -30,10 +30,10 @@
         </div>
 
         <div class="mt-6 flex flex-row gap-4 justify-center w-full max-w-full mx-auto px-4 sm:px-6">
-            <a href="{{ $page->menuButtonLink() }}" class="dark:border-[#d9cbac] dark:text-[#d9cbac] bg-transparent border-2 border-black text-black px-12 py-3 rounded-md text-center w-full sm:w-auto">
+            <a href="{{ $page->menuButtonLink() }}" class="border-2 px-12 py-3 rounded-md text-center w-full sm:w-auto transition-all duration-300" :class="darkMode ? 'border-[#d9cbac]  text-[#d9cbac] bg-black' : 'border-black text-black bg-transparent'">
                 {{ $page->menuButtonText() }}
             </a>
-            <a href="{{ $page->reservasionesButtonLink() }}" class="dark:bg-[#d9cbac] dark:text-black bg-black text-[#d9cbac] px-12 py-3 rounded-md text-center w-full sm:w-auto">
+            <a href="{{ $page->reservasionesButtonLink() }}" class="px-12 py-3 rounded-md text-center w-full sm:w-auto transition-all duration-300 border-2" :class="darkMode ? 'text-black bg-[#d9cbac] border-[#d9cbac]' : 'text-[#d9cbac] bg-black border-black'">
                 {{ $page->reservasionesButtonText() }}
             </a>
         </div>
