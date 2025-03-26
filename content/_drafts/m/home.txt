@@ -1,0 +1,41 @@
+Title: m
+
+----
+
+Main-image: 
+
+----
+
+Logo: 
+
+----
+
+Darkmain-image: 
+
+----
+
+Darklogo: 
+
+----
+
+Description: 
+
+----
+
+Menubuttontext: Menú
+
+----
+
+Reservasionesbuttontext: Reservar Ahora
+
+----
+
+Schedule: 
+
+----
+
+Social: 
+
+----
+
+Uuid: 4D0bJWvdohLElN1f

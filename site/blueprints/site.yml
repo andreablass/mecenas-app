@@ -1,3 +1,79 @@
 title: Site
-preset: pages
-unlisted: true
+tabs:
+  # Pages
+  home:
+    label: Home
+    icon: dashboard
+    columns:
+      published:
+        width: 2/3
+        sections:
+          public:
+            headline: Home
+            type: pages
+            layout: cards
+            status: published
+            flip: true
+            image:
+              cover: true
+              ratio: 16/9
+            templates: home
+
+      home_drafts:
+        width: 1/3
+        sections:
+          drafts:
+            headline: Drafts
+            type: pages
+            layout: cardlets
+            status: draft
+            image:
+              cover: true
+              ratio: 16/9
+            templates: home
+
+  settings:
+    label: Configuration
+    icon: settings
+    columns:
+      content:
+        type: fields
+        width: 2/3
+        fields:
+          categories:
+            label: Categories
+            type: tags
+
+          description:
+            label: Descripción
+            type: textarea
+
+          footer:
+            label: Footer Pages
+            type: pages
+
+      sidebar:
+        sticky: true
+        width: 1/3
+        sections:
+          files:
+            headline: Files
+            type: files
+
+  seo:
+    label: SEO
+    icon: search
+    columns:
+      content:
+        type: fields
+        width: 2/3
+        fields:
+          meta_title:
+            label: Meta Title
+            type: text
+          meta_description:
+            label: Meta Description
+            type: textarea
+          meta_keywords:
+            label: Meta Keywords
+            type: tags
