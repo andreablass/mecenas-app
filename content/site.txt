@@ -1,1 +1,33 @@
 Title: Site Title
+
+----
+
+Categories: 
+
+----
+
+Description: 
+
+----
+
+Footer: 
+
+----
+
+Menu-items:
+
+- 
+  title: ""
+  link: ""
+
+----
+
+Meta-title: 
+
+----
+
+Meta-description: 
+
+----
+
+Meta-keywords: 

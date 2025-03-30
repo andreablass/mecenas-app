@@ -60,6 +60,27 @@ tabs:
             headline: Files
             type: files
 
+  menu:
+    label: Menu
+    icon: menu
+    columns:
+      content:
+        type: fields
+        width: 2/3
+        fields:
+          menu_items:
+            label: Menu Items
+            type: structure
+            fields:
+              title:
+                label: Title
+                type: text
+              link:
+                label: Link
+                type: url
+            templates:
+             - menu            
+
   seo:
     label: SEO
     icon: search
