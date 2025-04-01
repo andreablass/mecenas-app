@@ -17,7 +17,8 @@ tabs:
             image:
               cover: true
               ratio: 16/9
-            templates: home
+            templates: 
+              - home
 
       home_drafts:
         width: 1/3
@@ -30,7 +31,8 @@ tabs:
             image:
               cover: true
               ratio: 16/9
-            templates: home
+            templates: 
+              - home
 
   settings:
     label: Configuration
@@ -64,22 +66,53 @@ tabs:
     label: Menu
     icon: menu
     columns:
-      content:
-        type: fields
-        width: 2/3
-        fields:
-          menu_items:
-            label: Menu Items
-            type: structure
-            fields:
-              title:
-                label: Title
-                type: text
-              link:
-                label: Link
-                type: url
+      first_column:
+        width: 1/3
+        sections:
+          cocteles:
+            headline: Cócteles
+            type: pages
+            layout: list
             templates:
-             - menu            
+              - cocteles
+
+          otras_bebidas:
+            headline: Otras Bebidas
+            type: pages
+            layout: list
+            templates:
+              - otrasBebidas
+            status: all
+
+      second_column:
+        width: 1/3
+        sections:
+          platillos:
+            headline: Platillos
+            type: pages
+            layout: list
+            templates:
+              - platillos
+            status: all
+
+      third_column:
+        width: 1/3
+        sections:
+          licores:
+            headline: Licores
+            type: pages
+            layout: list
+            templates:
+              - licores
+            status: all
+
+          destilados:
+            headline: Destilados
+            type: pages
+            layout: list
+            templates:
+              - destilados
+            status: all
 
   seo:
     label: SEO
@@ -92,9 +125,3 @@ tabs:
           meta_title:
             label: Meta Title
             type: text
-          meta_description:
-            label: Meta Description
-            type: textarea
-          meta_keywords:
-            label: Meta Keywords
-            type: tags
