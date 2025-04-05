@@ -1,5 +1,5 @@
 @import './colors.css';
 
 body {
-    @apply bg-repeat bg[370px_auto];
+    @apply bg-repeat bg-[370px_auto]; 
 }
