@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     laravel({
-      input: ['resources/css/web.css', 'resources/js/web.js', 'resources/js/app.js'],
+      input: ['resources/css/web.css', 'resources/js/web.js', 'resources/js/app.js','resources/css/app.css'],
       refresh: [...refreshPaths, 'site/templates/**'],
     }),
     // Install "npm install --save-dev @vitejs/plugin-react" and uncomment if you need React

@@ -1,0 +1,7 @@
+@import 'tailwincss';
+@import './theme/app.css';
+
+@plugin "@tailwincss/typography";
+
+@plugin "../../site/templates/components/layout";
+@source "..js/app";
