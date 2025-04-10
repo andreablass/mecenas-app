@@ -1,9 +1,9 @@
 @import './colors.css';
 
-@custom-variant dark (&:where(.dark; dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 body {  
+    @apply bg-repeat bg-[370px_auto]; 
     @apply bg-mecenas-light bg-[url(../images/blanco.jpeg)] bg-blend-luminosity;
     @apply dark:bg-mecenas-dark dark:bg[url(../images/negro.jpeg)]mdark:bg-blend-difference;
-    @apply bg-repeat bg-[370px_auto]; 
 }
