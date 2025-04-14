@@ -4,6 +4,6 @@
     </div>
 </template>
 
-<template setup>
+<script setup>
     
-</template>
+</script>
