@@ -69,26 +69,26 @@ tabs:
       first_column:
         width: 1/3
         sections:
-          cocteles:
-            headline: Cócteles
+          casa:
+            headline: Especiales de la Casa
             type: pages
             layout: list
             templates:
-              - cocteles
+              - casa
 
           otras_bebidas:
             headline: Otras Bebidas
             type: pages
             layout: list
             templates:
-              - otrasBebidas
+              - otras_bebidas
             status: all
 
       second_column:
         width: 1/3
         sections:
           platillos:
-            headline: Platillos
+            headline: Platillos para acompañar
             type: pages
             layout: list
             templates:
@@ -98,20 +98,20 @@ tabs:
       third_column:
         width: 1/3
         sections:
-          licores:
-            headline: Licores
+          clasicos:
+            headline: Clásicos Refrescantes
             type: pages
             layout: list
             templates:
-              - licores
+              - clasicos
             status: all
 
-          destilados:
-            headline: Destilados
+          detox:
+            headline: Funcionales & Detox
             type: pages
             layout: list
             templates:
-              - destilados
+              - detox
             status: all
 
   seo:
