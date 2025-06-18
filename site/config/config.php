@@ -9,7 +9,7 @@ $storage = $base . '/storage';
 KirbyEnv::load($base);
 
 return [
-    'debug' => env('KIRBY_DEBUG', false),
+    'debug' => true,
     'panel' => [
         'install' => env('KIRBY_INSTALL', false),
         'slug' => env('KIRBY_PANEL', 'panel')
@@ -23,7 +23,36 @@ return [
     'api' => env('KIRBY_API', true),
     'cookieName' => env('KIRBY_SESSION', 'kirby_session'),
     'hooks' => require_once 'hooks.php',
-    'routes' => require_once 'routes.php',
+    'routes' => [
+        [
+          'pattern' => 'api/home',
+          'method'  => 'GET',
+          'action'  => function () {
+            $page = page('home');
+    
+            return [
+              'mainImageLight' => $page->main_image()->toFile()?->url(),
+              'mainImageDark' => $page->darkMain_image()->toFile()?->url(),
+              'logoLight' => $page->logo()->toFile()?->url(),
+              'logoDark' => $page->darkLogo()->toFile()?->url(),
+              'description' => $page->description()->kirbytext(),
+              'menuButtonText' => $page->menuButtonText()->value(),
+              'menuButtonLink' => $page->menuButtonLink()->value(),
+              'reservasionesButtonText' => $page->reservasionesButtonText()->value(),
+              'reservasionesButtonLink' => $page->reservasionesButtonLink()->value(),
+              'schedule' => $page->schedule()->toStructure()->map(fn ($s) => [
+                'day' => $s->day()->value(),
+                'hours' => $s->hours()->value()
+              ]),
+              'location' => $page->location()->value(),
+              'social' => $page->social()->toStructure()->map(fn ($s) => [
+                'link' => $s->link()->value(),
+                'icon' => $s->icon()->value()
+              ]),
+            ];
+          }
+        ]
+      ],
     'beebmx.kirby-blade.bootstrap' => env('KIRBY_BLADE_BOOTSTRAP', true),
     'beebmx.kirby-blade.views' => $storage . '/views',
     'email' => [

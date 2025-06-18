@@ -1,28 +1,15 @@
 <!doctype html>
-<html>
-
+<html lang="es">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <x-meta />
-
-    <title>{{ page()->title() }} | {{ site()->title() }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ site()->title() }}</title>
 
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-    @vite(['resources/css/web.css', 'resources/js/web.js'])
+        @vite(['resources/css/web.css', 'resources/js/web.js']) {{-- CSS y JS para SPA --}}
     @endif
 </head>
-
-  
 <body>
-
-    <main >
-        {{ $slot }}
-    </main>
-
-    <x-footer.footer title="Footer" />
+    <div id="app"></div> {{-- Aquí Vue montará todo el contenido --}}
 </body>
-
 </html>
-
