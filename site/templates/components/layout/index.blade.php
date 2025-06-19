@@ -6,10 +6,11 @@
     <title>{{ site()->title() }}</title>
 
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-        @vite(['resources/css/web.css', 'resources/js/web.js']) {{-- CSS y JS para SPA --}}
+        @vite(['resources/css/web.css', 'resources/js/web.js','resources/js/app.js','resources/css/app.css']) {{-- CSS y JS para SPA --}}
     @endif
 </head>
 <body>
     <div id="app"></div> {{-- Aquí Vue montará todo el contenido --}}
+
 </body>
 </html>

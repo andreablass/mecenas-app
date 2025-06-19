@@ -4,7 +4,7 @@ import './bootstrap';
 import Alpine from 'alpinejs'
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router/router.'
+import router from './router/router'
 // import example from './components/AlpineExample'
 // Alpine.data('example', example)
 window.Alpine = Alpine

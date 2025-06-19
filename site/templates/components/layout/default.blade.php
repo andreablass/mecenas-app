@@ -23,7 +23,6 @@
         {{ $slot }}
     </main>
 
-    <x-footer.footer title="Footer" />
 </body>
 
 </html>

@@ -23,6 +23,11 @@ export default defineConfig({
       }
     }),
   ],
+  server: {
+    proxy: {
+      '/api': 'http://kirby-mecenas.test'
+    }
+  },
   resolve: {
     alias: {
       '@': '/resources/js',
