@@ -26,35 +26,12 @@ return [
     'hooks' => require_once 'hooks.php',
     'routes' => [
         [
-            'pattern' => 'api/home',
-            'method'  => 'GET',
-            'action'  => function () {
-                $page = page('home');
-
-                $data = [
-                    'mainImageLight' => $page->main_image()->toFile()?->url(),
-                    'mainImageDark' => $page->darkMain_image()->toFile()?->url(),
-                    'logoLight' => $page->logo()->toFile()?->url(),
-                    'logoDark' => $page->darkLogo()->toFile()?->url(),
-                    'description' => $page->description()->kirbytext(),
-                    'menuButtonText' => $page->menuButtonText()->value(),
-                    'menuButtonLink' => $page->menuButtonLink()->value(),
-                    'reservasionesButtonText' => $page->reservasionesButtonText()->value(),
-                    'reservasionesButtonLink' => $page->reservasionesButtonLink()->value(),
-                    'schedule' => $page->schedule()->toStructure()->map(fn ($s) => [
-                        'day' => $s->day()->value(),
-                        'hours' => $s->hours()->value()
-                    ]),
-                    'location' => $page->location()->value(),
-                    'social' => $page->social()->toStructure()->map(fn ($s) => [
-                        'link' => $s->link()->value(),
-                        'icon' => $s->icon()->value()
-                    ]),
-                ];
-
-                return Response::json($data);
+            'pattern' => 'api/test',
+            'method' => 'GET',
+            'action' => function () {
+              return ['msg' => 'Ruta test funcionando'];
             }
-        ]
+          ]
     ],
     'beebmx.kirby-blade.bootstrap' => env('KIRBY_BLADE_BOOTSTRAP', true),
     'beebmx.kirby-blade.views' => $storage . '/views',

@@ -10,10 +10,6 @@ export default defineConfig({
       input: ['resources/css/web.css', 'resources/js/web.js', 'resources/js/app.js','resources/css/app.css'],
       refresh: [...refreshPaths, 'site/templates/**'],
     }),
-    // Install "npm install --save-dev @vitejs/plugin-react" and uncomment if you need React
-    // react(),
-
-    // Install "npm install --save-dev @vitejs/plugin-vue" and uncomment if you need Vue
     vue({
       template: {
         transformAssetUrls: {
@@ -23,14 +19,18 @@ export default defineConfig({
       }
     }),
   ],
-  server: {
-    proxy: {
-      '/api': 'http://kirby-mecenas.test'
-    }
-  },
   resolve: {
     alias: {
       '@': '/resources/js',
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://kirby-mecenas.test',
+        changeOrigin: true,
+        secure: false,
+      }
+    }
+  }
 })
