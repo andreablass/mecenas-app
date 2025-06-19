@@ -1,0 +1,49 @@
+Title: Home
+
+----
+
+Main-image: - file://uRD41eS7ThDnHEuR
+
+----
+
+Logo: - file://8FE7aaKwR7rx6BWO
+
+----
+
+Darkmain-image: - file://dNEQKMsqnhsC7kiE
+
+----
+
+Darklogo: - file://nJq62GHfjZnk62aQ
+
+----
+
+Description: Movidos por el deseo de tener control creativo absoluto, ...
+
+----
+
+Menu-button-text: menú
+
+----
+
+Reservasiones-button-text: reservas
+
+----
+
+Menu-button-link: 
+
+----
+
+Reservasiones-button-link: 
+
+----
+
+Schedule:
+
+- day: lunes
+  hours: '6 pm - 1 am'
+# etc.
+
+----
+
+Uuid: kYlVecWh2BAxi8BI

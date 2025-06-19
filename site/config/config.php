@@ -26,38 +26,34 @@ return [
     'hooks' => require_once 'hooks.php',
     'routes' => [
         [
-            'pattern' => 'api/home',
-            'method' => 'GET',
-            'action' => function () {
-                $page = page('home');
-
-                if (!$page) {
-                    return Response::json(['error' => 'Página no encontrada'], 404);
-                }
-
-                return [
-                    'mainImageLight' => $page->main_image()->toFile()?->url() ?? null,
-                    'mainImageDark' => $page->darkMain_image()->toFile()?->url() ?? null,
-                    'logoLight' => $page->logo()->toFile()?->url() ?? null,
-                    'logoDark' => $page->darkLogo()->toFile()?->url() ?? null,
-                    'description' => $page->description()->kirbytext() ?? '',
-                    'menuButtonText' => $page->menuButtonText()->value() ?? '',
-                    'menuButtonLink' => $page->menuButtonLink()->value() ?? '',
-                    'reservasionesButtonText' => $page->reservasionesButtonText()->value() ?? '',
-                    'reservasionesButtonLink' => $page->reservasionesButtonLink()->value() ?? '',
-                    'schedule' => $page->schedule()->toStructure()->map(fn ($s) => [
-                        'day' => $s->day()->value() ?? '',
-                        'hours' => $s->hours()->value() ?? '',
-                    ]) ?? [],
-                    'location' => $page->location()->value() ?? '',
-                    'social' => $page->social()->toStructure()->map(fn ($s) => [
-                        'link' => $s->link()->value() ?? '',
-                        'icon' => $s->icon()->value() ?? '',
-                    ]) ?? [],
-                ];
-            }
-        ],
-    ],
+          'pattern' => 'api/home',
+          'method' => 'GET',
+          'action' => function () {
+            $page = page('home');
+    
+            return [
+              'mainImageLight' => $page->main_image()->toFile()?->url() ?? null,
+              'mainImageDark' => $page->darkmain_image()->toFile()?->url() ?? null,
+              'logoLight' => $page->logo()->toFile()?->url() ?? null,
+              'logoDark' => $page->darklogo()->toFile()?->url() ?? null,
+              'description' => $page->description()->kirbytext() ?? '',
+              'menuButtonText' => $page->menu_button_text()->value() ?? '',
+              'menuButtonLink' => $page->menu_button_link()->value() ?? '',
+              'reservasionesButtonText' => $page->reservasiones_button_text()->value() ?? '',
+              'reservasionesButtonLink' => $page->reservasiones_button_link()->value() ?? '',
+              'schedule' => $page->schedule()->toStructure()->map(fn ($s) => [
+                'day' => $s->day()->value(),
+                'hours' => $s->hours()->value()
+              ]),
+              'location' => $page->location()->value() ?? '',
+              'social' => $page->social()->toStructure()->map(fn ($s) => [
+                'link' => $s->link()->value(),
+                'icon' => $s->icon()->value()
+              ]),
+            ];
+          }
+        ]
+      ],
     'beebmx.kirby-blade.bootstrap' => env('KIRBY_BLADE_BOOTSTRAP', true),
     'beebmx.kirby-blade.views' => $storage . '/views',
     'email' => [
