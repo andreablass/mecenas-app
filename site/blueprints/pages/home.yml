@@ -1,5 +1,6 @@
 title: Home
 slug: home
+
 sections:
   content:
     type: fields
@@ -14,12 +15,12 @@ sections:
         type: files
         layout: cards
         max: 1
-      darkmain_image:
+      darkMain_image:
         label: Imagen en modo oscuro
         type: files
         layout: cards
         max: 1
-      darklogo:
+      darkLogo:
         label: Logo en modo oscuro
         type: files
         layout: cards
@@ -27,18 +28,18 @@ sections:
       description:
         label: Descripción
         type: textarea
-      menu_button_text:
+      menuButtonText:
         label: Texto del Botón de Menú
         type: text
         default: "Menú"
-      reservasiones_button_text:
+      reservasionesButtonText:
         label: Texto del Botón de Reservas
         type: text
         default: "Reservar Ahora"
-      menu_button_link:
+      menuButtonLink:
         label: Enlace del Botón de Menú
         type: url
-      reservasiones_button_link:
+      reservasionesButtonLink:
         label: Enlace del Botón de Reservas
         type: url
       schedule:

@@ -5,6 +5,8 @@ import Alpine from 'alpinejs'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router/router'
+import '../css/app.css'
+
 // import example from './components/AlpineExample'
 // Alpine.data('example', example)
 window.Alpine = Alpine

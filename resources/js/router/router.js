@@ -12,7 +12,7 @@ import NotFound from "../views/NotFound.vue";
 
 
 const routes = [
-  { path: '/', component: Home, name: 'home' },
+  { path: '/', component: Home, name: 'home', meta: { hideFooter: true,  hideHeader: true } },
   { path: '/platillos', component: Platillos, name: 'Platillos' },
   { path: '/tropical', component: Tropical, name: 'Tropical' },
   { path: '/especiales', component: Especiales, name: 'Especiales' },

@@ -1,10 +1,17 @@
-@import 'tailwindcss';
-/*@import './theme/general.css';
-@import './theme/app.css'; */
+/* resources/css/app.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@plugin "@tailwindcss/typography";
-@source "../../site/templates";
+[x-cloak] {
+  display: none !important;
+}
 
-
-[x-cloak] { display: none !important; }
-
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  

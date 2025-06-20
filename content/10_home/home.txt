@@ -2,7 +2,7 @@ Title: Home
 
 ----
 
-Main-image: - file://uRD41eS7ThDnHEuR
+Main-image: - file://0TRXVPMPzkuAQwM4
 
 ----
 
@@ -22,6 +22,42 @@ Description: Movidos por el deseo de tener control creativo absoluto, ...
 
 ----
 
+Menubuttontext: 
+
+----
+
+Reservasionesbuttontext: 
+
+----
+
+Menubuttonlink: 
+
+----
+
+Reservasionesbuttonlink: 
+
+----
+
+Schedule:
+
+- 
+  day: lunes
+  hours: '6 pm - 1 am'
+
+----
+
+Location: 
+
+----
+
+Social: 
+
+----
+
+Share: 
+
+----
+
 Menu-button-text: menú
 
 ----
@@ -38,12 +74,4 @@ Reservasiones-button-link:
 
 ----
 
-Schedule:
-
-- day: lunes
-  hours: '6 pm - 1 am'
-# etc.
-
-----
-
-Uuid: kYlVecWh2BAxi8BI
+Uuid: 3WD0ZvkozZZ5Y4Cf
