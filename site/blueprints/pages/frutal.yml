@@ -1,0 +1,26 @@
+title: Frutal
+slug: detox
+
+columns:
+  main:
+    width: 1/1
+    sections:
+      content:
+        type: fields
+        fields:
+          destilados:
+            label: Lista de Frutal
+            type: structure
+            sortBy: nombre asc
+            fields:
+              nombre:
+                label: Nombre del jugo
+                type: text
+
+              precio:
+                label: Precio
+                type: number
+                after: MXN
+
+
+            help: Agrega o edita los jugos  disponibles.

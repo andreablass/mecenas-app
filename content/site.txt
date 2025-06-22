@@ -14,9 +14,28 @@ Footer:
 
 - page://KcIofa5HGZjdNcRg
 - page://40e5DRfWcP6lEB9T
-- page://Y35OR6zKNCWTtXlU
+- page://BQo9kwMyfexuSKS4
 - page://MFYyGU8V7oU2K4Fk
-- page://HpUHFZo7WuiBMSWx
+
+----
+
+Imagen-especiales: - file://zQhzeo7K6aOqXjpV
+
+----
+
+Imagen-frutal: - file://nNL5JfBIK8xXkvsY
+
+----
+
+Imagen-platillos: - file://8Rd7YVn7tKVExpvQ
+
+----
+
+Imagen-clasicos: - file://nYnr7UYPuvhdqUlS
+
+----
+
+Imagen-detox: - file://K5EkHFg8qFg1wksD
 
 ----
 

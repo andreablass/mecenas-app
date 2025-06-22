@@ -1,0 +1,39 @@
+title: Clásico Refrescante
+slug: clasicos
+preset: page
+
+fields:
+  title:
+    label: Nombre del jugo
+    type: text
+    width: 1/2
+
+  precio:
+    label: Precio
+    type: number
+    width: 1/2
+    after: "MXN"
+    step: 10
+
+  ingredientes:
+    label: Ingredientes
+    type: textarea
+    buttons: false
+    placeholder: "Jugo de Naranja – Falernum – Soda quinina"
+
+  descriptores:
+    label: Descriptores de sabor
+    type: tags
+    placeholder: "Ej: Agua, Carbonatado, Acido..."
+    help: Puedes escribir los que necesites, sin límite.
+
+  imagen:
+    label: Imagen del vaso
+    type: files
+    layout: cards
+    max: 1
+    image:
+      cover: true
+      ratio: 1/1
+      max: 1
+

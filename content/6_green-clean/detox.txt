@@ -1,0 +1,22 @@
+Title: Funcionales & Detox
+
+----
+
+Destilados:
+
+- 
+  nombre: Digestivo Herbal
+  precio: 130
+  imagen: [ ]
+- 
+  nombre: Green Clean
+  precio: 120
+  imagen: [ ]
+
+----
+
+Text: Espinaca, manzana, pepino, apio, jengibre y limón.
+
+----
+
+Uuid: 40e5DRfWcP6lEB9T

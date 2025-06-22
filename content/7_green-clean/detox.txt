@@ -1,9 +1,0 @@
-Title: Green Clean
-
-----
-
-Text: Espinaca, manzana, pepino, apio, jengibre y limón.
-
-----
-
-Uuid: 40e5DRfWcP6lEB9T

@@ -1,4 +1,5 @@
 title: Site
+
 tabs:
   # Pages
   home:
@@ -66,27 +67,24 @@ tabs:
     label: Menu
     icon: menu
     columns:
-      first_column:
-        width: 1/3
+      izquierda:
+        width: 2/3
         sections:
           casa:
             headline: Especiales de la Casa
             type: pages
             layout: list
             templates:
-              - casa
+              - especiales
 
-          otras_bebidas:
-            headline: Otras Bebidas
+          frutal:
+            headline: Frutal
             type: pages
             layout: list
             templates:
-              - otras_bebidas
+              - frutal
             status: all
 
-      second_column:
-        width: 1/3
-        sections:
           platillos:
             headline: Platillos para acompañar
             type: pages
@@ -95,9 +93,6 @@ tabs:
               - platillos
             status: all
 
-      third_column:
-        width: 1/3
-        sections:
           clasicos:
             headline: Clásicos Refrescantes
             type: pages
@@ -114,6 +109,62 @@ tabs:
               - detox
             status: all
 
+      derecha:
+        width: 1/3
+        sections:
+          imagenes:
+            type: fields
+            fields:
+              imagen_especiales:
+                label: Imagen de la sección “Especiales”
+                type: files
+                layout: cards
+                max: 1
+                width: 1/2
+                image:
+                  cover: true
+                  ratio: 1/1
+
+              imagen_frutal:
+                label: Imagen de la sección “Frutal”
+                type: files
+                layout: cards
+                max: 1
+                width: 1/2
+                image:
+                  cover: true
+                  ratio: 1/1
+
+              imagen_platillos:
+                label: Imagen de la sección “Platillos”
+                type: files
+                layout: cards
+                max: 1
+                width: 1/2
+                image:
+                  cover: true
+                  ratio: 1/1
+
+              imagen_clasicos:
+                label: Imagen de la sección “Clásicos”
+                type: files
+                layout: cards
+                max: 1
+                width: 1/2
+                image:
+                  cover: true
+                  ratio: 1/1
+
+              imagen_detox:
+                label: Imagen de la sección “Detox”
+                type: files
+                layout: cards
+                max: 1
+                width: 1/2
+                image:
+                  cover: true
+                  ratio: 1/1
+
   seo:
     label: SEO
     icon: search
@@ -125,3 +176,4 @@ tabs:
           meta_title:
             label: Meta Title
             type: text
+

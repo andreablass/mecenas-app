@@ -17,6 +17,6 @@ const year = new Date().getFullYear()
       left-0
     "
   >
-    <p class="text-sm text-gray-600">&copy; {{ year }}. Juices. Todos los derechos reservados.</p>
+    <p class="text-sm text-gray-600">&copy; {{ year }}. JugoLab. Todos los derechos reservados.</p>
   </footer>
 </template>

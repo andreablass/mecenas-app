@@ -1,0 +1,26 @@
+title: Especiales de la casa
+slug: especiales
+
+columns:
+  main:
+    width: 1/1
+    sections:
+      content:
+        type: fields
+        fields:
+          destilados:
+            label: Lista de Especiales de la casa
+            type: structure
+            sortBy: nombre asc
+            fields:
+              nombre:
+                label: Nombre del jugo
+                type: text
+
+              precio:
+                label: Precio
+                type: number
+                after: MXN
+
+
+            help: Agrega o edita los jugos  disponibles.

@@ -1,0 +1,24 @@
+title: Platillos para acompañar Refrescante
+slug: platillos
+
+fields:
+  title:
+    label: Nombre del jugo
+    type: text
+    width: 1/2
+
+  precio:
+    label: Precio
+    type: number
+    width: 1/2
+    after: "MXN"
+    step: 10
+
+
+  ingredientes:
+    label: Ingredientes
+    type: textarea
+    buttons: false
+    placeholder: "Jugo de Naranja – Falernum – Soda quinina"
+
+

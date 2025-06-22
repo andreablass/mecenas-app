@@ -8,8 +8,8 @@
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
-    
-    <div id="app"></div>
+<title><?php echo _e($page->title()->value()); ?> | Juices</title>
+
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal892748396dcfc5b97e43e6771e743950)): ?>

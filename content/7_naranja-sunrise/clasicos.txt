@@ -1,0 +1,29 @@
+Title: Naranja Sunrise
+
+----
+
+Precio: 120
+
+----
+
+Imagen: - file://1kuh8ZEjDM6L8CeM
+
+----
+
+Ingredientes: Jugo de naranja recién exprimido, un toque de mandarina.
+
+----
+
+Descriptores: Naranja, Mandarina
+
+----
+
+Nota: 
+
+----
+
+Text: Jugo de naranja recién exprimido, un toque de mandarina.
+
+----
+
+Uuid: KcIofa5HGZjdNcRg
