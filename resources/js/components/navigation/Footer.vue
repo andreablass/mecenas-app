@@ -2,14 +2,19 @@
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
 
-const footerItems = ref([])
+const menuImages = ref({})
+
+// Formatea "especiales" => "Especiales"
+const formatTitle = (key) => {
+  return key.charAt(0).toUpperCase() + key.slice(1)
+}
 
 onMounted(async () => {
   try {
-    const res = await axios.get('/data-footer')
-    footerItems.value = res.data.footerItems || []
+    const res = await axios.get('/data-menu-images')
+    menuImages.value = res.data || {}
   } catch (e) {
-    console.error('Error loading footer items:', e)
+    console.error('Error cargando imágenes del menú:', e)
   }
 })
 </script>
@@ -19,20 +24,19 @@ onMounted(async () => {
     <div
       class="container mx-auto flex flex-nowrap justify-center gap-4 overflow-x-auto no-scrollbar px-4"
     >
-      <a
-        v-for="item in footerItems"
-        :key="item.title"
-        :href="item.url"
-        class="block w-[3cm] h-[3cm] overflow-hidden rounded hover:scale-105 transition-transform"
+      <router-link
+        v-for="(src, key) in menuImages"
+        :key="key"
+        :to="'/' + key"
+        class="block w-[3cm] h-[3.5cm] text-center text-xs text-gray-700 hover:text-black"
       >
         <img
-          v-if="item.image"
-          :src="item.image"
-          :alt="item.title"
-          class="w-full h-full object-contain shadow-none"
+          :src="src"
+          :alt="key"
+          class="w-full h-[3cm] object-cover rounded shadow-sm hover:scale-105 transition-transform"
         />
-        <span v-else class="text-xs block text-center mt-2">{{ item.title }}</span>
-      </a>
+        <span class="block mt-1 font-medium">{{ formatTitle(key) }}</span>
+      </router-link>
     </div>
   </footer>
 </template>

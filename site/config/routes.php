@@ -18,7 +18,6 @@ return [
         'mainImageLight' => $page->main_image()->toFile()?->url(),
         'mainImageDark'  => $page->darkMain_image()->toFile()?->url(),
         'logoLight'      => $page->logo()->toFile()?->url(),
-        'logoDark'       => $page->darkLogo()->toFile()?->url(),
         'description'    => $page->description()->kirbytext(),
         'menuButtonText' => $page->menuButtonText()->value(),
         'menuButtonLink' => $page->menuButtonLink()->value(),
@@ -37,28 +36,31 @@ return [
       ];
     }
   ],
-[
-  'pattern' => 'data-footer',
-  'method' => 'GET',
-  'action' => function () {
-    $site = kirby()->site();
-    $pages = $site->footer()->toPages(); // campo tipo `pages` desde site.yml
-
-    $items = [];
-
-    foreach ($pages as $page) {
-      $image = $page->images()->first(); // toma la primera imagen
-      $items[] = [
-        'title' => $page->title()->value(),
-        'url' => $page->url(),
-        'image' => $image ? $image->url() : null,
+  [
+    'pattern' => 'data-menu-images',
+    'method'  => 'GET',
+    'action'  => function () {
+      $site = kirby()->site();
+  
+      return [
+        'especiales' => $site->imagen_especiales()->toFile()?->url(),
+        'frutal'     => $site->imagen_frutal()->toFile()?->url(),
+        'platillos'  => $site->imagen_platillos()->toFile()?->url(),
+        'clasicos'   => $site->imagen_clasicos()->toFile()?->url(),
+        'detox'      => $site->imagen_detox()->toFile()?->url(),
       ];
     }
-
-    return [
-      'footerItems' => $items
-    ];
-  }
-],
-
+  ],
+  [
+    'pattern' => 'data-header',
+    'method'  => 'GET',
+    'action'  => function () {
+      $page = page('home'); 
+  
+      return [
+        'headerImage' => $page->logo()->toFile()?->url(), // <-- accede al logo de la página home
+      ];
+    }
+  ],  
+  
 ];

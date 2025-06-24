@@ -6,5 +6,4 @@
 </template>
 
 <script setup>
-// Puedes dejar esto vacío si aún no tienes lógica.
 </script>

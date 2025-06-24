@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
+import { RouterLink } from 'vue-router'
+
 
 const data = ref(null)
 
@@ -14,7 +16,12 @@ onMounted(async () => {
   <div v-if="data" class="p-6 max-w-4xl mx-auto">
     <div class="text-center">
       <div class="text-center">
-        <img v-if="data.mainImageLight" :src="data.mainImageLight" alt="Imagen principal" class="block w-[3cm] h-[3cm] overflow-hidden rounded hover:scale-105-auto mx-auto object-contain" />
+        <img
+          v-if="data.mainImageLight"
+          :src="data.mainImageLight"
+          alt="Imagen principal"
+          class="block w-[3cm] h-[3cm] overflow-hidden rounded hover:scale-105-auto mx-auto object-contain"
+        />
         <img v-if="data.logoLight" :src="data.logoLight" alt="Logo" class="block w-[3cm] h-[3cm] overflow-hidden rounded hover:scale-105-automx-auto mt-4 object-contain" />
       </div>
     </div>
@@ -22,9 +29,21 @@ onMounted(async () => {
     <p class="mt-4 text-xl text-center" v-html="data.description"></p>
 
     <div class="mt-6 flex justify-center gap-4">
-      <a v-if="data.menuButtonLink" :href="data.menuButtonLink" class="px-6 py-3 border rounded hover:bg-gray-100">
-        {{ data.menuButtonText || 'Menú' }}
-      </a>
+      <div class="mt-6 flex justify-center gap-4">
+<RouterLink
+  :to="{ name: 'Especiales' }"
+  class="inline-block px-6 py-3 bg-yellow-400 text-black font-semibold rounded no-underline hover:bg-yellow-500 transition"
+>
+  {{ data.menuButtonText || 'Menú' }}
+</RouterLink>
+
+
+
+        <a v-if="data.reservasionesButtonLink" :href="data.reservasionesButtonLink" class="px-6 py-3 border rounded hover:bg-gray-100">
+          {{ data.reservasionesButtonText || 'Reservar Ahora' }}
+        </a>
+      </div>
+
       <a v-if="data.reservasionesButtonLink" :href="data.reservasionesButtonLink" class="px-6 py-3 border rounded hover:bg-gray-100">
         {{ data.reservasionesButtonText || 'Reservar Ahora' }}
       </a>

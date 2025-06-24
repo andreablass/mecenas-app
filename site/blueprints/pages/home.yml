@@ -15,16 +15,6 @@ sections:
         type: files
         layout: cards
         max: 1
-      darkMain_image:
-        label: Imagen en modo oscuro
-        type: files
-        layout: cards
-        max: 1
-      darkLogo:
-        label: Logo en modo oscuro
-        type: files
-        layout: cards
-        max: 1
       description:
         label: Descripción
         type: textarea
