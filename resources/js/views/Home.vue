@@ -2,12 +2,15 @@
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
 import { RouterLink } from 'vue-router'
+import { useLogoStore } from '@/stores/useLogoStore'
 
+const logoStore = useLogoStore()
 const data = ref(null)
 
 onMounted(async () => {
   const res = await axios.get('/blassandrea/data/home')
   data.value = res.data
+  logoStore.fetchLogoImage()
 })
 </script>
 
@@ -21,7 +24,12 @@ onMounted(async () => {
           alt="Imagen principal"
           class="block w-[3cm] h-[3cm] overflow-hidden rounded hover:scale-105-auto mx-auto object-contain"
         />
-        <img v-if="data.logoLight" :src="data.logoLight" alt="Logo" class="block w-[3cm] h-[3cm] overflow-hidden rounded hover:scale-105-automx-auto mt-4 object-contain" />
+        <img
+          v-if="logoStore.logoImage"
+          :src="logoStore.logoImage"
+          alt="Logo"
+          class="block w-[3cm] h-[3cm] rounded mx-auto mt-4 object-contain hover:scale-105 transition-transform"
+        />
       </div>
     </div>
 
@@ -29,7 +37,6 @@ onMounted(async () => {
 
     <div class="mt-6 flex justify-center gap-4">
       <div class="mt-6 flex justify-center gap-4">
-        
         <button class="bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-2 rounded-full shadow">
           <RouterLink :to="{ name: 'Especiales' }">
             {{ data.menuButtonText || 'Menú' }}

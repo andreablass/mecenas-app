@@ -10,7 +10,7 @@ class GetHeaderLogo  {
         $home = App::instance()->site()->homePage() ;
         
         return [
-            'headerImage' => $home->logo()->toFile()?->url(), // <-- accede al logo de la página home
+            'logoImage' => $home->logo()->toFile()?->url(), // <-- accede al logo de la página home
           ];
     }
 }

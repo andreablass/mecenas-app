@@ -22,16 +22,5 @@ return [
           return (new App\Actions\GetHeaderLogo)();
         }
       ],
-    [
-      'pattern' => 'data-header',
-      'method'  => 'GET',
-      'action'  => function () {
-        $page = page('home'); 
-    
-        return [
-          'headerImage' => $page->logo()->toFile()?->url(), // <-- accede al logo de la página home
-        ];
-      }
-    ],  
     
   ];
