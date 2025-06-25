@@ -3,11 +3,10 @@ import { ref, onMounted } from 'vue'
 import axios from 'axios'
 import { RouterLink } from 'vue-router'
 
-
 const data = ref(null)
 
 onMounted(async () => {
-  const res = await axios.get('/data-home')
+  const res = await axios.get('/blassandrea/data/home')
   data.value = res.data
 })
 </script>
@@ -30,14 +29,9 @@ onMounted(async () => {
 
     <div class="mt-6 flex justify-center gap-4">
       <div class="mt-6 flex justify-center gap-4">
-<RouterLink
-  :to="{ name: 'Especiales' }"
-  class="inline-block px-6 py-3 bg-yellow-400 text-black font-semibold rounded no-underline hover:bg-yellow-500 transition"
->
-  {{ data.menuButtonText || 'Menú' }}
-</RouterLink>
-
-
+        <RouterLink :to="{ name: 'Especiales' }" class="inline-block px-6 py-3 bg-yellow-400 text-black font-semibold rounded no-underline hover:bg-yellow-500 transition">
+          {{ data.menuButtonText || 'Menú' }}
+        </RouterLink>
 
         <a v-if="data.reservasionesButtonLink" :href="data.reservasionesButtonLink" class="px-6 py-3 border rounded hover:bg-gray-100">
           {{ data.reservasionesButtonText || 'Reservar Ahora' }}

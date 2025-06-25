@@ -4,7 +4,7 @@ import { ref, onMounted } from 'vue'
 const headerImage = ref('')
 
 onMounted(async () => {
-  const res = await fetch('/data-header')
+  const res = await fetch('/blassandrea/header/logo')
   const data = await res.json()
   headerImage.value = data.headerImage
 })

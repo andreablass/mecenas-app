@@ -11,7 +11,7 @@ const formatTitle = (key) => {
 
 onMounted(async () => {
   try {
-    const res = await axios.get('/data-menu-images')
+    const res = await axios.get('/blassandrea/footer/menu/images')
     menuImages.value = res.data || {}
   } catch (e) {
     console.error('Error cargando imágenes del menú:', e)
