@@ -2,6 +2,7 @@
 
 namespace App\Actions;
 
+use App\Helpers\ImageHelper;
 use Kirby\Cms\App;
 
 class GetFooterMenuImages  {
@@ -9,11 +10,11 @@ class GetFooterMenuImages  {
     {
         $site = App::instance()->site() ;
         return [
-            'especiales' => $site->imagen_especiales()->toFile()?->url(),
-            'frutal'     => $site->imagen_frutal()->toFile()?->url(),
-            'platillos'  => $site->imagen_platillos()->toFile()?->url(),
-            'clasicos'   => $site->imagen_clasicos()->toFile()?->url(),
-            'detox'      => $site->imagen_detox()->toFile()?->url(),
+            'especiales' => ImageHelper::getFileUrl($site->imagen_especiales()),
+            'frutal' => ImageHelper::getFileUrl($site->imagen_frutal()),
+            'platillos' => ImageHelper::getFileUrl($site->imagen_platillos()),
+            'clasicos' => ImageHelper::getFileUrl($site->imagen_clasicos()),
+            'detox' => ImageHelper::getFileUrl($site->imagen_detox()),
           ];
     }
 }

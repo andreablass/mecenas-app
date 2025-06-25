@@ -29,9 +29,12 @@ onMounted(async () => {
 
     <div class="mt-6 flex justify-center gap-4">
       <div class="mt-6 flex justify-center gap-4">
-        <RouterLink :to="{ name: 'Especiales' }" class="inline-block px-6 py-3 bg-yellow-400 text-black font-semibold rounded no-underline hover:bg-yellow-500 transition">
-          {{ data.menuButtonText || 'Menú' }}
-        </RouterLink>
+        
+        <button class="bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-2 rounded-full shadow">
+          <RouterLink :to="{ name: 'Especiales' }">
+            {{ data.menuButtonText || 'Menú' }}
+          </RouterLink>
+        </button>
 
         <a v-if="data.reservasionesButtonLink" :href="data.reservasionesButtonLink" class="px-6 py-3 border rounded hover:bg-gray-100">
           {{ data.reservasionesButtonText || 'Reservar Ahora' }}
