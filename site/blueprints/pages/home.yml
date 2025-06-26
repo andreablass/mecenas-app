@@ -10,6 +10,11 @@ sections:
         type: files
         layout: cards
         max: 1
+      name_image:
+        label: Imagen con Nombre
+        type: files
+        layout: cards
+        max: 1
       logo:
         label: Logo
         type: files

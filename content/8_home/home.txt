@@ -6,23 +6,23 @@ Main-image: - file://0TRXVPMPzkuAQwM4
 
 ----
 
-Logo: - file://8FE7aaKwR7rx6BWO
+Name-image: - file://7ydao81SiAbZnVhj
 
 ----
 
-Darkmain-image: - file://dNEQKMsqnhsC7kiE
+Logo: - file://9wUYAd67Iq9KwJ70
 
 ----
 
-Darklogo: - file://nJq62GHfjZnk62aQ
+Description:
+
+En JugoLab nuestra intención es simple: brindarte un momento de felicidad. Creemos en el poder de lo natural, de lo fresco y de esos pequeños detalles que hacen el día más bonito.
+Elaboramos nuestros jugos con ingredientes reales, llenos de color y vida, y los acompañamos con un menú pensado para disfrutar, compartir y nutrirte.
+Cada vaso, cada plato, está hecho con cariño, buscando que este espacio sea ese lugar donde te recargas, te consientes y te das un respiro delicioso.
 
 ----
 
-Description: Movidos por el deseo de tener control creativo absoluto, ...
-
-----
-
-Menubuttontext: 
+Menubuttontext: Menu
 
 ----
 
@@ -55,6 +55,14 @@ Social:
 ----
 
 Share: 
+
+----
+
+Darkmain-image: - file://dNEQKMsqnhsC7kiE
+
+----
+
+Darklogo: - file://nJq62GHfjZnk62aQ
 
 ----
 

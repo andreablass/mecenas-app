@@ -10,7 +10,7 @@ const route = useRoute()
 <template>
   <div class="min-h-screen flex flex-col">
     <Header v-if="!route.meta.hideHeader" class="fixed top-0 left-0 right-0 z-10 bg-white shadow-lg p-2 h-[120px] flex justify-end items-center"/>
-    <main class="pt-[120px] flex-1 p-4">
+    <main class="pt-[50px] flex-1 p-4">
       <router-view :key="$route.fullPath" />
 
     </main>
