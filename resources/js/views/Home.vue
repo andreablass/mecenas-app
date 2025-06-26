@@ -31,7 +31,7 @@ onMounted(async () => {
     <!-- Botones -->
     <div class="flex justify-center gap-4">
       <!-- Botón 1: Transparente con borde negro -->
-      <RouterLink :to="{ name: 'Especiales' }">
+      <RouterLink :to="{ name: 'Clasicos' }">
         <button class="px-10 py-4 border-2 border-black text-black rounded-full text-lg font-semibold hover:bg-black hover:text-white transition">
           {{ data.menuButtonText || 'Menú' }}
         </button>

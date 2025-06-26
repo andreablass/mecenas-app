@@ -5,7 +5,7 @@ import axios from 'axios'
 const data = ref(null)
 
 onMounted(async () => {
-  const res = await axios.get('/blassandrea/data/clasicosPage')
+  const res = await axios.get('blassandrea/data/clasicosPage')
   data.value = res.data
 })
 </script>
@@ -37,7 +37,7 @@ onMounted(async () => {
     </div>
 
     <!-- Descriptores -->
-    <div v-if="data.descriptores.length" class="mb-6">
+    <div v-if="data.descriptores && data.descriptores.length" class="mb-6">
       <h2 class="text-2xl font-bold mb-2">Descriptores de sabor</h2>
       <div class="flex flex-wrap gap-2">
         <span

@@ -8,18 +8,20 @@ class GetDataClasicosPage
 {
     public function __invoke()
     {
+        // Busca todas las páginas que usan la plantilla 'clasicos'
         $pages = App::instance()->site()->index()->filterBy('intendedTemplate', 'clasicos');
 
         if ($pages->isEmpty()) {
-            return ['error' => 'Página no encontrada'];
+            return ['error' => 'No hay jugos clásicos'];
         }
 
-        return $pages->map(fn($page) => [
+        // Mapea cada página y devuelve su información
+        return $pages->map(fn ($page) => [
             'title'        => $page->title()->value(),
             'slug'         => $page->slug(),
             'precio'       => $page->precio()->value(),
-            'ingredientes' => $page->ingredientes()->kirbytext(),
-            'descriptores' => $page->descriptores()->split(','),
+            'ingredientes' => $page->ingredientes()->kirbytext() ?? '',
+            'descriptores' => $page->descriptores()->split(',') ?? [],
             'imagen'       => $page->imagen()->toFile()?->url() ?? null,
         ])->values();
     }
