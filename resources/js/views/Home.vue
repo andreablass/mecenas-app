@@ -62,8 +62,8 @@ onMounted(async () => {
     <!-- Redes sociales -->
     <div class="text-center">
       <h2 class="text-2xl font-bold mb-2">Síguenos</h2>
-      <div class="flex justify-center gap-6 text-2xl">
-        <a v-for="s in data.social" :href="s.link" target="_blank" rel="noopener noreferrer" :key="s.icon" class="hover:text-blue-600">
+      <div v-if="data?.social?.length" class="flex justify-center gap-6 text-3xl">
+        <a v-for="s in data.social" :key="s.icon" :href="s.link" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 transition">
           <i :class="`fab fa-${s.icon}`"></i>
         </a>
       </div>

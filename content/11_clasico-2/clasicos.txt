@@ -1,0 +1,21 @@
+Title: Clasico 2
+
+----
+
+Precio: 20
+
+----
+
+Ingredientes: Naranja con limon
+
+----
+
+Descriptores: Dulce
+
+----
+
+Imagen: - file://1U165loWU6yGXH4P
+
+----
+
+Uuid: k3gqhbrMwyqX3tvw

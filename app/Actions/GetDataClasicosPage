@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Actions;
+
+use Kirby\Cms\App;
+
+class GetDataClasicosPage
+{
+    public function __invoke()
+    {
+        $page = App::instance()->site()->find('clasicos');
+
+        if (!$page) {
+            return ['error' => 'Página no encontrada'];
+        }
+
+        return [
+            'title'        => $page->title()->value(),
+            'slug'         => $page->slug(),
+            'precio'       => $page->precio()->value(),
+            'ingredientes' => $page->ingredientes()->kirbytext(), // o ->value() si lo quieres sin formato
+            'descriptores' => $page->descriptores()->split(','), // Lista de etiquetas
+            'imagen'       => $page->imagen()->toFile()?->url() ?? null
+        ];
+    }
+}

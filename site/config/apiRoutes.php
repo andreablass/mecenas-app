@@ -22,5 +22,12 @@ return [
           return (new App\Actions\GetHeaderLogo)();
         }
       ],
+      [
+        'pattern' => 'blassandrea/data/clasicosPage',
+        'method' => 'GET',
+        'action' => function() {
+          return (new App\Actions\GetDataClasicosPage)();
+        }
+      ],
     
   ];

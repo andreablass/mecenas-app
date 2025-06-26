@@ -6,15 +6,15 @@ Precio: 120
 
 ----
 
-Imagen: - file://1kuh8ZEjDM6L8CeM
-
-----
-
 Ingredientes: Jugo de naranja recién exprimido, un toque de mandarina.
 
 ----
 
 Descriptores: Naranja, Mandarina
+
+----
+
+Imagen: - file://1kuh8ZEjDM6L8CeM
 
 ----
 

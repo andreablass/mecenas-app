@@ -70,7 +70,16 @@ tabs:
       izquierda:
         width: 2/3
         sections:
-          casa:
+          clasicos:
+            slug: clasicos
+            headline: Clásicos Refrescantes
+            type: pages
+            layout: list
+            templates:
+              - clasicos
+            status: all
+
+          especiales:
             headline: Especiales de la Casa
             type: pages
             layout: list
@@ -91,14 +100,6 @@ tabs:
             layout: list
             templates:
               - platillos
-            status: all
-
-          clasicos:
-            headline: Clásicos Refrescantes
-            type: pages
-            layout: list
-            templates:
-              - clasicos
             status: all
 
           detox:

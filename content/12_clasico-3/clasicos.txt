@@ -1,0 +1,21 @@
+Title: Clasico 3
+
+----
+
+Precio: 30
+
+----
+
+Ingredientes: soda con limon
+
+----
+
+Descriptores: agrio
+
+----
+
+Imagen: - file://BwKiYqP2St7LmE9K
+
+----
+
+Uuid: rFn78eXqvDsT3mNf

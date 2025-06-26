@@ -38,14 +38,21 @@ Schedule:
 - 
   day: martes
   hours: 8 am -10 am
+- 
+  day: miércoles
+  hours: '8 am - 3 pm'
 
 ----
 
-Location: 
+Location: Cuernavaca, Morrelos
 
 ----
 
-Social: 
+Social:
+
+- 
+  icon: instagram
+  link: https://tailwindcss.com/docs/font-weight
 
 ----
 

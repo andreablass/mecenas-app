@@ -2,35 +2,52 @@
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
 
-const clasicos = ref([])
+const data = ref(null)
 
 onMounted(async () => {
-  const res = await axios.get('/data-clasicos')
-  clasicos.value = res.data.clasicos
+  const res = await axios.get('/blassandrea/data/clasicosPage')
+  data.value = res.data
 })
 </script>
 
 <template>
-  <div class="max-w-4xl mx-auto p-6">
-    <h1 class="text-3xl font-bold mb-6 text-center">Clásicos Refrescantes</h1>
+  <div v-if="data" class="max-w-3xl mx-auto p-4">
+    <!-- Título -->
+    <h1 class="text-4xl font-bold mb-6 text-center">{{ data.title }}</h1>
 
-    <div v-if="clasicos.length" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-      <div
-        v-for="(item, index) in clasicos"
-        :key="index"
-        class="bg-white shadow-md rounded p-4"
-      >
-        <img
-          v-if="item.image"
-          :src="item.image"
-          :alt="item.title"
-          class="w-full h-40 object-cover rounded mb-4"
-        />
-        <h2 class="text-xl font-semibold mb-2">{{ item.title }}</h2>
-        <p class="text-gray-700">{{ item.text }}</p>
-      </div>
+    <!-- Imagen -->
+    <div class="flex justify-center mb-6">
+      <img
+        v-if="data.imagen"
+        :src="data.imagen"
+        alt="Imagen del vaso"
+        class="w-60 h-60 object-cover rounded-xl shadow-lg"
+      />
     </div>
 
-    <p v-else class="text-center text-gray-500">No hay jugos clásicos disponibles aún.</p>
+    <!-- Precio -->
+    <div class="text-center mb-6">
+      <p class="text-2xl font-semibold">Precio: MXN ${{ data.precio }}</p>
+    </div>
+
+    <!-- Ingredientes -->
+    <div class="mb-6">
+      <h2 class="text-2xl font-bold mb-2">Ingredientes</h2>
+      <p class="text-lg">{{ data.ingredientes }}</p>
+    </div>
+
+    <!-- Descriptores -->
+    <div v-if="data.descriptores.length" class="mb-6">
+      <h2 class="text-2xl font-bold mb-2">Descriptores de sabor</h2>
+      <div class="flex flex-wrap gap-2">
+        <span
+          v-for="tag in data.descriptores"
+          :key="tag"
+          class="px-3 py-1 bg-yellow-200 rounded-full text-sm font-medium"
+        >
+          {{ tag }}
+        </span>
+      </div>
+    </div>
   </div>
 </template>
