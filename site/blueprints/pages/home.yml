@@ -31,12 +31,6 @@ sections:
         label: Texto del Botón de Reservas
         type: text
         default: "Reservar Ahora"
-      menuButtonLink:
-        label: Enlace del Botón de Menú
-        type: url
-      reservasionesButtonLink:
-        label: Enlace del Botón de Reservas
-        type: url
       schedule:
         label: Horario
         type: structure

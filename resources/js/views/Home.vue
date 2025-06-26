@@ -38,10 +38,11 @@ onMounted(async () => {
       </RouterLink>
 
       <!-- Botón 2: Fondo negro, texto blanco -->
-
-      <button class="px-10 py-4 bg-black text-white rounded-full text-lg font-semibold hover:bg-neutral-800 transition">
-        Reservar
-      </button>
+      <RouterLink :to="{ name: 'Especiales' }">
+        <button class="px-10 py-4 border-2 border-black text-black rounded-full text-lg font-semibold hover:bg-black hover:text-white transition">
+          {{ data.reservasionesButtonText || 'Reservaciones' }}
+        </button>
+      </RouterLink>
     </div>
 
     <!-- Horario -->

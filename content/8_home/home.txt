@@ -30,19 +30,14 @@ Reservasionesbuttontext:
 
 ----
 
-Menubuttonlink: 
-
-----
-
-Reservasionesbuttonlink: 
-
-----
-
 Schedule:
 
 - 
   day: lunes
   hours: '6 pm - 1 am'
+- 
+  day: martes
+  hours: 8 am -10 am
 
 ----
 
@@ -55,6 +50,14 @@ Social:
 ----
 
 Share: 
+
+----
+
+Menubuttonlink: 
+
+----
+
+Reservasionesbuttonlink: 
 
 ----
 
