@@ -17,7 +17,7 @@ onMounted(async () => {
 <template>
 <div
   v-if="data"
-  class="flex flex-col items-center justify-center min-h-screen max-w-4xl mx-auto p-4"
+  class="flex flex-col items-center justify-center min-h-screen max-w-4xl mx-auto p-4 "
 >
     <!-- Contenedor imágenes principal -->
     <div class="flex flex-col items-center mb-8">

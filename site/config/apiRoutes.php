@@ -50,5 +50,12 @@ return [
           return (new App\Actions\GetDataDetoxPage)();
         }
       ],
+      [
+        'pattern' => 'blassandrea/data/platillosPage',
+        'method' => 'GET',
+        'action' => function() {
+          return (new App\Actions\GetDataPlatillosPage)();
+        }
+      ],
     
   ];

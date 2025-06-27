@@ -11,9 +11,9 @@ class GetFooterMenuImages  {
         $site = App::instance()->site() ;
         return [
             'clasicos' => ImageHelper::getFileUrl($site->imagen_clasicos()),
-            'especiales' => ImageHelper::getFileUrl($site->imagen_especiales()),
-            'frutal' => ImageHelper::getFileUrl($site->imagen_frutal()),
             'platillos' => ImageHelper::getFileUrl($site->imagen_platillos()),
+            'especiales' => ImageHelper::getFileUrl($site->imagen_especiales()),
+            'frutales' => ImageHelper::getFileUrl($site->imagen_frutal()),
             'detox' => ImageHelper::getFileUrl($site->imagen_detox()),
           ];
     }
