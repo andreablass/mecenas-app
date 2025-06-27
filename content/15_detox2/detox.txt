@@ -1,0 +1,25 @@
+Title: Detox2
+
+----
+
+Precio: 120
+
+----
+
+Descripcion: Detox
+
+----
+
+Sugerencia: 
+
+----
+
+Lista: 
+
+----
+
+Categories: 
+
+----
+
+Uuid: rGwqjZXXiNATrZ4m

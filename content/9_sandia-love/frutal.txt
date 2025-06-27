@@ -2,9 +2,34 @@ Title: Sandía Love
 
 ----
 
+Precio: 120
+
+----
+
+Descripcion: Agua
+
+----
+
+Sugerencia: 
+
+----
+
+Lista: 
+
+----
+
+Categories: 
+
+----
+
+Imagen: 
+
+----
+
 Destilados:
 
 - 
+  _id: 1fba6507-a5df-4377-9fae-be1068f07bcb
   nombre: Mango Cool
   precio: 140
 

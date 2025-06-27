@@ -1,26 +1,39 @@
-title: Especiales de la casa
+title: Especiales 
 slug: especiales
 
-columns:
-  main:
-    width: 1/1
-    sections:
-      content:
-        type: fields
-        fields:
-          destilados:
-            label: Lista de Especiales de la casa
-            type: structure
-            sortBy: nombre asc
-            fields:
-              nombre:
-                label: Nombre del jugo
-                type: text
+fields:
+  title:
+    label: Nombre del jugo
+    type: text
+    width: 1/2
 
-              precio:
-                label: Precio
-                type: number
-                after: MXN
+  precio:
+    label: Precio
+    type: number
+    width: 1/2
+    after: "MXN"
+    step: 10
 
+  ingredientes:
+    label: Ingredientes
+    type: group
+    fields:
+      descripcion:
+        label: Descripción del jugo
+        type: textarea
+      sugerencia:
+        label: Sugerencia para consumir
+        type: textarea
+      lista:
+        label: Lista de ingredientes
+        type: textarea
 
-            help: Agrega o edita los jugos  disponibles.
+  categories:
+    label: Categorias de sabor
+    type: tags
+    placeholder: "Ej: Agua, Carbonatado, Ácido..."
+    accept: options
+    options:
+      type: query
+      query: site.categories.split
+

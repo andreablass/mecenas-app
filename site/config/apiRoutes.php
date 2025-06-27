@@ -29,5 +29,26 @@ return [
           return (new App\Actions\GetDataClasicosPage)();
         }
       ],
+      [
+        'pattern' => 'blassandrea/data/especialesPage',
+        'method' => 'GET',
+        'action' => function() {
+          return (new App\Actions\GetDataEspecialesPage)();
+        }
+      ],
+      [
+        'pattern' => 'blassandrea/data/frutalesPage',
+        'method' => 'GET',
+        'action' => function() {
+          return (new App\Actions\GetDataFrutalesPage)();
+        }
+      ],
+      [
+        'pattern' => 'blassandrea/data/detoxPage',
+        'method' => 'GET',
+        'action' => function() {
+          return (new App\Actions\GetDataDetoxPage)();
+        }
+      ],
     
   ];

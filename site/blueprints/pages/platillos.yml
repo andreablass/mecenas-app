@@ -3,7 +3,7 @@ slug: platillos
 
 fields:
   title:
-    label: Nombre del jugo
+    label: Nombre del platillo
     type: text
     width: 1/2
 
@@ -14,11 +14,17 @@ fields:
     after: "MXN"
     step: 10
 
-
   ingredientes:
     label: Ingredientes
-    type: textarea
-    buttons: false
-    placeholder: "Jugo de Naranja – Falernum – Soda quinina"
-
+    type: group
+    fields:
+      descripcion:
+        label: Descripción del jugo
+        type: textarea
+      sugerencia:
+        label: Sugerencia para consumir
+        type: textarea
+      lista:
+        label: Lista de ingredientes
+        type: textarea
 

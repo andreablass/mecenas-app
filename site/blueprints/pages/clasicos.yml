@@ -17,15 +17,26 @@ fields:
 
   ingredientes:
     label: Ingredientes
-    type: textarea
-    buttons: false
-    placeholder: "Jugo de Naranja – Falernum – Soda quinina"
+    type: group
+    fields:
+      descripcion:
+        label: Descripción del jugo
+        type: textarea
+      sugerencia:
+        label: Sugerencia para consumir
+        type: textarea
+      lista:
+        label: Lista de ingredientes
+        type: textarea
 
-  descriptores:
-    label: Descriptores de sabor
+  categories:
+    label: Categorias de sabor
     type: tags
-    placeholder: "Ej: Agua, Carbonatado, Acido..."
-    help: Puedes escribir los que necesites, sin límite.
+    placeholder: "Ej: Agua, Carbonatado, Ácido..."
+    accept: options
+    options:
+      type: query
+      query: site.categories.split
 
   imagen:
     label: Imagen del vaso
@@ -35,5 +46,4 @@ fields:
     image:
       cover: true
       ratio: 1/1
-      max: 1
-
+      

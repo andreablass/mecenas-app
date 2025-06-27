@@ -1,0 +1,29 @@
+Title: Frutal2
+
+----
+
+Precio: 103
+
+----
+
+Descripcion: Frutal
+
+----
+
+Sugerencia: 
+
+----
+
+Lista: 
+
+----
+
+Categories: 
+
+----
+
+Imagen: 
+
+----
+
+Uuid: dc1y6QGpfrDmJCkv
