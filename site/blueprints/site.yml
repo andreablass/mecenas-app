@@ -86,12 +86,12 @@ tabs:
             templates:
               - especiales
 
-          frutal:
-            headline: Frutal
+          frutales:
+            headline: Frutales
             type: pages
             layout: list
             templates:
-              - frutal
+              - frutales
             status: all
 
           platillos:

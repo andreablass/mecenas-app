@@ -36,5 +36,3 @@ fields:
     options:
       type: query
       query: site.categories.split
-
-

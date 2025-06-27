@@ -5,7 +5,7 @@ import axios from 'axios'
 const data = ref(null)
 
 onMounted(async () => {
-  const res = await axios.get('blassandrea/data/frutalPage')
+  const res = await axios.get('blassandrea/data/frutalesPage')
   data.value = res.data
 })
 </script>
