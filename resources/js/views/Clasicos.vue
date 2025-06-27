@@ -11,42 +11,50 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div v-if="data" class="max-w-3xl mx-auto p-4">
-    <!-- Título -->
-    <h1 class="text-4xl font-bold mb-6 text-center">{{ data.title }}</h1>
+  <div class="flex justify-center items-start mt-4"> <!-- items-start para que se alinee arriba -->
+    <div class="flex flex-col gap-10">
+      <div
+        v-for="item in data"
+        :key="item.title"
+        class="flex items-center gap-10 rounded-2xl shadow-lg p-6"
+      >
+        <div>
+          <img
+            v-if="item.imagen"
+            :src="item.imagen"
+            alt="Imagen del vaso"
+            class="max-w-[180px] h-auto object-cover rounded-2xl shadow-md"
+            loading="lazy"
+          />
+        </div>
 
-    <!-- Imagen -->
-    <div class="flex justify-center mb-6">
-      <img
-        v-if="data.imagen"
-        :src="data.imagen"
-        alt="Imagen del vaso"
-        class="w-60 h-60 object-cover rounded-xl shadow-lg"
-      />
-    </div>
+        <div class="flex flex-col justify-center">
+          <div class="text-yellow-800 font-extrabold text-4xl mb-1">
+            {{ item.title }}
+          </div>
 
-    <!-- Precio -->
-    <div class="text-center mb-6">
-      <p class="text-2xl font-semibold">Precio: MXN ${{ data.precio }}</p>
-    </div>
+          <div
+            class="text-gray-600 text-sm mb-3 leading-snug"
+            v-html="item.ingredientes.value"
+          ></div>
 
-    <!-- Ingredientes -->
-    <div class="mb-6">
-      <h2 class="text-2xl font-bold mb-2">Ingredientes</h2>
-      <p class="text-lg">{{ data.ingredientes }}</p>
-    </div>
+          <div
+            v-if="item.descriptores && item.descriptores.length"
+            class="flex flex-wrap gap-2 mb-3"
+          >
+            <span
+              v-for="tag in item.descriptores"
+              :key="tag"
+              class="bg-yellow-100 text-yellow-700 text-xs font-semibold px-3 py-0.5 rounded-full"
+            >
+              {{ tag }}
+            </span>
+          </div>
 
-    <!-- Descriptores -->
-    <div v-if="data.descriptores && data.descriptores.length" class="mb-6">
-      <h2 class="text-2xl font-bold mb-2">Descriptores de sabor</h2>
-      <div class="flex flex-wrap gap-2">
-        <span
-          v-for="tag in data.descriptores"
-          :key="tag"
-          class="px-3 py-1 bg-yellow-200 rounded-full text-sm font-medium"
-        >
-          {{ tag }}
-        </span>
+          <div class="text-yellow-800 font-bold text-xs">
+            Precio: MXN ${{ item.precio }}
+          </div>
+        </div>
       </div>
     </div>
   </div>

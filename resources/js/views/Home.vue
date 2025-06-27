@@ -15,7 +15,10 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div v-if="data" class="p-4 max-w-4xl mx-auto mt-8">
+<div
+  v-if="data"
+  class="flex flex-col items-center justify-center min-h-screen max-w-4xl mx-auto p-4"
+>
     <!-- Contenedor imágenes principal -->
     <div class="flex flex-col items-center mb-8">
       <img v-if="data.mainImageLight" :src="data.mainImageLight" alt="Imagen principal" class="max-w-[150px] h-auto object-contain" />
