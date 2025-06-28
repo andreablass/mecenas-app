@@ -13,12 +13,6 @@
     @endif
 </head>
 
-<body :class="{ 'bg-[url(/images/black.jpeg)] bg-center text-[#d9cbac]': darkMode, 'bg-[#d9cbac] text-black': !darkMode}" class="transition-all duration-300">
-    <button @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode)" class="p-2 bg-gray-400 rounded">
-        <span x-show="!darkMode">🌞</span>
-        <span x-show="darkMode">🌙</span>
-    </button>
-
     <main>
         {{ $slot }}
     </main>
