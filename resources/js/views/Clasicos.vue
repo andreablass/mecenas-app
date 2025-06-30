@@ -15,9 +15,11 @@ onMounted(async () => {
 function openIngredientes(item) {
   modal.openModal({
     title: item.title,
-    ingredientes: item.ingredientes, // 👈 así, directo
+    ingredientes: item.ingredientes ?? 'Sin ingredientes disponibles',
+    sugerencia: ' ', // No hay sugerencia porque no viene separado
   })
 }
+
 
 </script>
 
@@ -49,6 +51,8 @@ function openIngredientes(item) {
             @click="openIngredientes(item)"
             class="text-sm text-blue-600 underline mb-2"
           >
+          <button @click="openIngredientes(item)">Ver ingredientes</button>
+
             Ver ingredientes
           </button>
 

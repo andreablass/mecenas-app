@@ -14,7 +14,13 @@ const { isOpen, data, closeModal } = useModalStore()
       <h2 class="text-2xl font-bold mb-4">{{ data.title }}</h2>
 
       <div class="mb-3">
-        <div class="text-sm leading-snug" v-html="data.ingredientes"></div>
+        <h3 class="font-semibold mb-1">Ingredientes:</h3>
+        <div class="text-sm" v-html="data.ingredientes"></div>
+      </div>
+
+      <div v-if="data.sugerencia" class="mb-3">
+        <h3 class="font-semibold mb-1">Sugerencia:</h3>
+        <p class="text-sm">{{ data.sugerencia }}</p>
       </div>
     </div>
   </div>
