@@ -15,10 +15,10 @@ onMounted(async () => {
 function openIngredientes(item) {
   modal.openModal({
     title: item.title,
-    ingredientes: item.ingredientes.lista ?? '',
-    sugerencia: item.ingredientes.sugerencia ?? '',
+    ingredientes: item.ingredientes, // 👈 así, directo
   })
 }
+
 </script>
 
 <template>
