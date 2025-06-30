@@ -1,17 +1,28 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
+import { useModalStore } from '../stores/useModalIngredientes'
+import IngredientesModal from '@/components/IngredientesModal.vue'
 
 const data = ref(null)
+const modal = useModalStore()
 
 onMounted(async () => {
   const res = await axios.get('blassandrea/data/clasicosPage')
   data.value = res.data
 })
+
+function openIngredientes(item) {
+  modal.openModal({
+    title: item.title,
+    ingredientes: item.ingredientes.lista ?? '',
+    sugerencia: item.ingredientes.sugerencia ?? '',
+  })
+}
 </script>
 
 <template>
-  <div class="flex justify-center items-start mt-4"> <!-- items-start para que se alinee arriba -->
+  <div class="flex justify-center items-start mt-4">
     <div class="flex flex-col gap-10">
       <div
         v-for="item in data"
@@ -33,10 +44,13 @@ onMounted(async () => {
             {{ item.title }}
           </div>
 
-          <div
-            class="text-gray-600 text-sm mb-3 leading-snug"
-            v-html="item.ingredientes.value"
-          ></div>
+          <!-- Botón para abrir el modal -->
+          <button
+            @click="openIngredientes(item)"
+            class="text-sm text-blue-600 underline mb-2"
+          >
+            Ver ingredientes
+          </button>
 
           <div
             v-if="item.descriptores && item.descriptores.length"
@@ -58,4 +72,7 @@ onMounted(async () => {
       </div>
     </div>
   </div>
+
+  <!-- El modal va aquí -->
+  <IngredientesModal />
 </template>
