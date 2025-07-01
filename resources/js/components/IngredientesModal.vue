@@ -1,14 +1,12 @@
 <script setup>
-import { modalStoreData } from '../stores/modalIngredientes'
+import { modalStoreData } from '@/stores/modalIngredientes'
 
 const modal = modalStoreData()
 </script>
 
 <template>
-  <div
-    v-if="modal.isOpen"
-    class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
-  >
+<div v-if="isOpen" class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm">
+
     <div class="bg-white dark:bg-neutral-900 text-black dark:text-white p-6 rounded-2xl shadow-xl max-w-lg w-full relative">
       <button @click="modal.closeModal()" class="absolute top-2 right-3 text-xl">&times;</button>
 

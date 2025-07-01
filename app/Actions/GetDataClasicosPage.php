@@ -21,9 +21,11 @@ class GetDataClasicosPage
             'slug'         => $page->slug(),
             'precio'       => $page->precio()->value(),
             'ingredientes' => [
-                'descripcion' => $page->ingredientes()->descripcion()->value() ?? '',
-                'sugerencia'  => $page->ingredientes()->sugerencia()->value() ?? '',
+                'descripcion' => $page->ingredientes()->toStructure()?->descripcion()->value() ?? '',
+                'sugerencia'  => $page->ingredientes()->toStructure()?->sugerencia()->value() ?? '',
+                'lista'       => $page->ingredientes()->toStructure()?->lista()->value() ?? '',
             ],
+            
             'imagen'       => $page->imagen()->toFile()?->url() ?? null,
         ])->values();
     }

@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
+
 export const modalStoreData = defineStore('modal', () => {
   const isOpen = ref(false)
   const data = ref({
