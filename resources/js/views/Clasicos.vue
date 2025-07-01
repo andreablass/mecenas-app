@@ -1,13 +1,10 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
-import { modalStoreData } from '../stores/modalIngredientes'
 import IngredientesModal from '@/components/IngredientesModal.vue'
 import { useOpenIngredientes } from '@/composables/useModalIngredientes'
 
-
 const data = ref(null)
-const modal = modalStoreData()
 const { openIngredientes } = useOpenIngredientes()
 
 onMounted(async () => {
@@ -19,9 +16,19 @@ onMounted(async () => {
 <template>
   <div class="flex justify-center items-start mt-4">
     <div class="flex flex-col gap-10">
-      <div v-for="item in data" :key="item.title" class="flex items-center gap-10 rounded-2xl shadow-lg p-6">
+      <div
+        v-for="item in data"
+        :key="item.title"
+        class="flex items-center gap-10 rounded-2xl shadow-lg p-6"
+      >
         <div>
-          <img v-if="item.imagen" :src="item.imagen" alt="Imagen del vaso" class="max-w-[180px] h-auto object-cover rounded-2xl shadow-md" loading="lazy" />
+          <img
+            v-if="item.imagen"
+            :src="item.imagen"
+            alt="Imagen del vaso"
+            class="max-w-[180px] h-auto object-cover rounded-2xl shadow-md"
+            loading="lazy"
+          />
         </div>
 
         <div class="flex flex-col justify-center">
@@ -29,20 +36,33 @@ onMounted(async () => {
             {{ item.title }}
           </div>
 
-          <button @click="openIngredientes(item)" class="text-sm text-blue-600 underline mb-2">Ver ingredientes</button>
+          <button
+            @click="openIngredientes(item)"
+            class="text-sm text-blue-600 underline mb-2"
+          >
+            Ver ingredientes
+          </button>
 
-          <div v-if="item.descriptores && item.descriptores.length" class="flex flex-wrap gap-2 mb-3">
-            <span v-for="tag in item.descriptores" :key="tag" class="bg-yellow-100 text-yellow-700 text-xs font-semibold px-3 py-0.5 rounded-full">
+          <div
+            v-if="item.descriptores && item.descriptores.length"
+            class="flex flex-wrap gap-2 mb-3"
+          >
+            <span
+              v-for="tag in item.descriptores"
+              :key="tag"
+              class="bg-yellow-100 text-yellow-700 text-xs font-semibold px-3 py-0.5 rounded-full"
+            >
               {{ tag }}
             </span>
           </div>
 
-          <div class="text-yellow-800 font-bold text-xs">Precio: MXN ${{ item.precio }}</div>
+          <div class="text-yellow-800 font-bold text-xs">
+            Precio: MXN ${{ item.precio }}
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- El modal va aquí -->
   <IngredientesModal />
 </template>
