@@ -1,13 +1,13 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
-
-export const modalStoreData = defineStore('modal', () => {
+export const modalStoreData = defineStore('modalIngredientes', () => {
   const isOpen = ref(false)
   const data = ref({
     title: '',
-    ingredientes: '',
+    descripcion: '',
     sugerencia: '',
+    lista: ''
   })
 
   function openModal(payload) {
@@ -19,8 +19,9 @@ export const modalStoreData = defineStore('modal', () => {
     isOpen.value = false
     data.value = {
       title: '',
-      ingredientes: '',
+      descripcion: '',
       sugerencia: '',
+      lista: ''
     }
   }
 

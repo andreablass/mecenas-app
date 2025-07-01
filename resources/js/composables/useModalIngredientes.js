@@ -8,14 +8,9 @@ export function useOpenIngredientes() {
         modal.openModal({
             title: item.title,
             descripcion: item.ingredientes,
-            sugerencia: item.ingredientes,
-        })
-
+            sugerencia: item.sugerencia,
+          })
     }
-
-
     return { openIngredientes }
 }
-
-
 
