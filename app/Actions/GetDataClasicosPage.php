@@ -20,8 +20,10 @@ class GetDataClasicosPage
             'title'        => $page->title()->value(),
             'slug'         => $page->slug(),
             'precio'       => $page->precio()->value(),
-            'ingredientes' => $page->ingredientes()->kirbytext() ?? '',
-            'descriptores' => $page->descriptores()->split(',') ?? [],
+            'ingredientes' => [
+                'descripcion' => $page->ingredientes()->descripcion()->value() ?? '',
+                'sugerencia'  => $page->ingredientes()->sugerencia()->value() ?? '',
+            ],
             'imagen'       => $page->imagen()->toFile()?->url() ?? null,
         ])->values();
     }

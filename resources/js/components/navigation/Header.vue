@@ -1,8 +1,8 @@
 <script setup>
 import { onMounted } from 'vue'
-import { useLogoStore } from '@/stores/useLogoStore'
+import { logoStoreData } from '@/stores/logoStore'
 
-const logoStore = useLogoStore()
+const logoStore = logoStoreData()
 
 onMounted(() => {
   logoStore.fetchLogoImage()

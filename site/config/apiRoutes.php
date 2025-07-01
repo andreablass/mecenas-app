@@ -57,5 +57,4 @@ return [
           return (new App\Actions\GetDataPlatillosPage)();
         }
       ],
-    
   ];

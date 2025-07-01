@@ -3,7 +3,7 @@ import axios from 'axios'
 
 import { readonly, ref } from 'vue'
 
-export const useLogoStore = defineStore('logo', () => {
+export const logoStoreData = defineStore('logo', () => {
   const logoImage = ref(null)
 
   function setLogoImage(url) {
