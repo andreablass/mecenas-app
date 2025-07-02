@@ -4,9 +4,12 @@ return [
     [
       'pattern' => 'blassandrea/data/home',
       'method' => 'GET',
-      'action' => function() {
-        return (new App\Actions\GetDataHome)();
-      }
+      'action' => fn() => (new App\Actions\GetDataHome)()
+    ],
+    [
+      'pattern' => 'blassandrea/data/pages',
+      'method' => 'GET',
+      'action' => fn() => (new App\Actions\GetDataPages)()
     ],
     [
         'pattern' => 'blassandrea/footer/menu/images',
