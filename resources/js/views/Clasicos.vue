@@ -1,15 +1,17 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-import axios from 'axios'
+import { onMounted } from 'vue'
+import { dataPagesStoreStore } from '@/stores/dataPagesStore'
 import IngredientesModal from '@/components/IngredientesModal.vue'
 import { useOpenIngredientes } from '@/composables/useModalIngredientes'
 
-const data = ref(null)
+const store = dataPagesStoreStore()
 const { openIngredientes } = useOpenIngredientes()
 
-onMounted(async () => {
-  const res = await axios.get('blassandrea/data/clasicosPage')
-  data.value = res.data
+onMounted(() => {
+  // Solo hace fetch si no hay datos
+  if (!store.clasicos.length) {
+    store.fetchAllPages()
+  }
 })
 </script>
 
@@ -17,7 +19,7 @@ onMounted(async () => {
   <div class="flex justify-center items-start mt-4">
     <div class="flex flex-col gap-10">
       <div
-        v-for="item in data"
+        v-for="item in store.clasicos"
         :key="item.title"
         class="flex items-center gap-10 rounded-2xl shadow-lg p-6"
       >
@@ -37,7 +39,7 @@ onMounted(async () => {
           </div>
 
           <button
-            @click="openIngredientes(item)"
+            
             class="text-sm text-blue-600 underline mb-2"
           >
             Ver ingredientes
