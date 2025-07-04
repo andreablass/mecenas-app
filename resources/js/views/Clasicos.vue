@@ -1,11 +1,8 @@
 <script setup>
 import { onMounted } from 'vue'
 import { dataPagesStoreStore } from '@/stores/dataPagesStore'
-import IngredientesModal from '@/components/IngredientesModal.vue'
-import { useOpenIngredientes } from '@/composables/useModalIngredientes'
 
 const store = dataPagesStoreStore()
-const { openIngredientes } = useOpenIngredientes()
 
 onMounted(() => {
   // Solo hace fetch si no hay datos
@@ -66,5 +63,4 @@ onMounted(() => {
     </div>
   </div>
 
-  <IngredientesModal />
 </template>
