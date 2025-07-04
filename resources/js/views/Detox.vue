@@ -1,12 +1,15 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onBeforeMount } from 'vue'
 import axios from 'axios'
+import { dataPagesStore } from '@/stores/dataPagesStore'
 
-const data = ref(null)
+const store = dataPagesStore()
 
-onMounted(async () => {
-  const res = await axios.get('blassandrea/data/detoxPage')
-  data.value = res.data
+onBeforeMount(() => {
+  // Solo hace fetch si no hay datos
+  if (!store.frutales.length) {
+    store.fetchAllPages()
+  }
 })
 </script>
 
@@ -20,7 +23,7 @@ onMounted(async () => {
 
       <!-- Bloques de cada producto -->
       <div
-        v-for="(item, index) in data"
+        v-for="(item, index) in store.detox"
         :key="item.title"
         :class="index !== 0 ? 'border-t border-yellow-200 pt-6' : ''"
         class="pb-6"
@@ -35,7 +38,6 @@ onMounted(async () => {
           </div>
         </div>
 
-        <!-- Puedes agregar más info aquí -->
       </div>
     </div>
   </div>

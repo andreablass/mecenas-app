@@ -1,12 +1,14 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-import axios from 'axios'
+import { onBeforeMount } from 'vue'
+import { dataPagesStore } from '@/stores/dataPagesStore'
 
-const data = ref(null)
+const store = dataPagesStore()
 
-onMounted(async () => {
-  const res = await axios.get('blassandrea/data/platillosPage')
-  data.value = res.data
+onBeforeMount(() => {
+  // Solo hace fetch si aún no hay datos
+  if (!store.platillos.length) {
+    store.fetchAllPages()
+  }
 })
 </script>
 
@@ -20,7 +22,7 @@ onMounted(async () => {
 
       <!-- Bloques de cada producto -->
       <div
-        v-for="(item, index) in data"
+        v-for="(item, index) in store.platillos"
         :key="item.title"
         :class="index !== 0 ? 'border-t border-yellow-200 pt-6' : ''"
         class="pb-6"
@@ -35,7 +37,13 @@ onMounted(async () => {
           </div>
         </div>
 
-        <!-- Puedes agregar más info aquí -->
+        <p class="text-gray-700 mb-2">{{ item.descripcion }}</p>
+        <img
+          v-if="item.imagen"
+          :src="item.imagen"
+          :alt="item.title"
+          class="w-full max-w-md rounded-lg shadow-md"
+        />
       </div>
     </div>
   </div>

@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import axios from 'axios'
 
-export const dataPagesStoreStore = defineStore('jugos', () => {
+export const dataPagesStore = defineStore('jugos', () => {
   const clasicos = ref([])
   const especiales = ref([])
   const detox = ref([])

@@ -6,6 +6,18 @@ Precio: 130
 
 ----
 
+Descripcion: DEScripcion
+
+----
+
+Sugerencia: 
+
+----
+
+Lista: 
+
+----
+
 Imagen: - file://MpGuWRHlHXnX9evz
 
 ----

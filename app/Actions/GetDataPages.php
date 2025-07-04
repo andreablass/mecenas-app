@@ -23,10 +23,38 @@ class GetDataPages
             'imagen'      => $page->imagen()->toFile()?->url(),
         ])->values();
 
-        $especiales = $app->site()->index()->filterBy('intendedTemplate', 'especiales')->map(fn ($page) => [/*...*/])->values();
-        $detox = $app->site()->index()->filterBy('intendedTemplate', 'detox')->map(fn ($page) => [/*...*/])->values();
-        $frutales = $app->site()->index()->filterBy('intendedTemplate', 'frutales')->map(fn ($page) => [/*...*/])->values();
-        $platillos = $app->site()->index()->filterBy('intendedTemplate', 'platillos')->map(fn ($page) => [/*...*/])->values();
+        $especiales = $app->site()->index()->filterBy('intendedTemplate', 'especiales')->map(fn ($page) => [
+            'title'       => $page->title()->value(),
+            'slug'        => $page->slug(),
+            'precio'      => $page->precio()->value(),
+            'descripcion' => $page->descripcion()->value() ?? '',
+            'sugerencia'  => $page->sugerencia()->value() ?? '',
+            'lista'       => $page->lista()->value() ?? '',
+        ])->values();
+        $detox = $app->site()->index()->filterBy('intendedTemplate', 'detox')->map(fn ($page) => [
+            'title'       => $page->title()->value(),
+            'slug'        => $page->slug(),
+            'precio'      => $page->precio()->value(),
+            'descripcion' => $page->descripcion()->value() ?? '',
+            'sugerencia'  => $page->sugerencia()->value() ?? '',
+            'lista'       => $page->lista()->value() ?? '',
+        ])->values();
+        $frutales = $app->site()->index()->filterBy('intendedTemplate', 'frutales')->map(fn ($page) => [
+        'title'       => $page->title()->value(),
+        'slug'        => $page->slug(),
+        'precio'      => $page->precio()->value(),
+        'descripcion' => $page->descripcion()->value() ?? '',
+        'sugerencia'  => $page->sugerencia()->value() ?? '',
+        'lista'       => $page->lista()->value() ?? '',
+        ])->values();
+        $platillos = $app->site()->index()->filterBy('intendedTemplate', 'platillos')->map(fn ($page) => [
+            'title'       => $page->title()->value(),
+            'slug'        => $page->slug(),
+            'precio'      => $page->precio()->value(),
+            'descripcion' => $page->descripcion()->value() ?? '',
+            'sugerencia'  => $page->sugerencia()->value() ?? '',
+            'lista'       => $page->lista()->value() ?? '',
+        ])->values();
 
         return [
             'clasicos' => $clasicos,

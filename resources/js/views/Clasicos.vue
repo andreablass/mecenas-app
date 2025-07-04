@@ -1,10 +1,10 @@
 <script setup>
-import { onMounted } from 'vue'
-import { dataPagesStoreStore } from '@/stores/dataPagesStore'
+import { onBeforeMount } from 'vue'
+import { dataPagesStore } from '@/stores/dataPagesStore'
 
-const store = dataPagesStoreStore()
+const store = dataPagesStore()
 
-onMounted(() => {
+onBeforeMount(() => {
   // Solo hace fetch si no hay datos
   if (!store.clasicos.length) {
     store.fetchAllPages()
