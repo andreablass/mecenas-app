@@ -9,7 +9,7 @@ import Especiales from '../views/Especiales.vue'
 import Detox from '../views/Detox.vue'
 import Clasicos from '../views/Clasicos.vue'
 import NotFound from "../views/NotFound.vue";
-
+import Recomendaciones from "../views/Recomendaciones.vue";
 
 const routes = [
   { path: '/', component: Home, name: 'home', meta: { hideFooter: true,  hideHeader: true } },
@@ -18,6 +18,7 @@ const routes = [
   { path: '/especiales', component: Especiales, name: 'Especiales' },
   { path: '/detox', component: Detox, name: 'Detox' },
   { path: '/clasicos', component: Clasicos, name: 'Clasicos' },
+  { path: '/recomendaciones', component: Recomendaciones, name: 'Recomendaciones' },
   { path: '/:pathMatch(.*)*', component: NotFound, name: 'not-found'  },
 ]
 

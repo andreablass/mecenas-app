@@ -166,6 +166,16 @@ tabs:
                   cover: true
                   ratio: 1/1
 
+              imagen_recomendaciones:
+                label: Imagen de la sección Recomendaciones
+                type: files
+                layout: cards
+                max: 1
+                width: 1/2
+                image:
+                  cover: true
+                  ratio: 1/1
+
   seo:
     label: SEO
     icon: search

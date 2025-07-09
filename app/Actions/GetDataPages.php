@@ -89,6 +89,7 @@ class GetDataPages
                 'especiales' => ImageHelper::getFileUrl($site->imagen_especiales()),
                 'frutales' => ImageHelper::getFileUrl($site->imagen_frutal()),
                 'detox' => ImageHelper::getFileUrl($site->imagen_detox()),
+                'recomendaciones' => ImageHelper::getFileUrl($site->imagen_recomendaciones()),
             ]
         ];
     }
