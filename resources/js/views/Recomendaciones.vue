@@ -1,56 +1,103 @@
 <script setup>
-import { computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { ref } from 'vue'
 import { dataPagesStore } from '@/stores/dataPagesStore'
 
-const route = useRoute()
 const store = dataPagesStore()
 
-// Recolecta todas las categorías
-const todosLosJugos = [
-  ...store.clasicos,
-  ...store.especiales,
-  ...store.detox,
-  ...store.frutales,
-  ...store.platillos
-]
+// Opciones para preguntas
+const opciones = {
+  bebida: ['Dulce', 'Ácido', 'Amargo', 'Simple', 'Suave', 'Fuerte'],
+  sabores: ['Afrutados', 'Secos', 'Tropicales'],
+  estilo: ['Ligero', 'Muy dulce', 'Simple']
+}
 
-// Obtiene las preferencias desde query params
-const preferencias = JSON.parse(route.query.respuestas)
-
-// Aplanar todas las respuestas en un solo array de tags
-const tagsSeleccionados = [
-  ...preferencias.bebida,
-  ...preferencias.sabores,
-  ...preferencias.estilo
-]
-
-// Filtrar jugos con coincidencias
-const recomendaciones = computed(() => {
-  return todosLosJugos.filter(jugo => {
-    const jugoTags = jugo.descriptores || jugo.lista || []
-    return tagsSeleccionados.some(tag => jugoTags.includes(tag))
-  })
+// Respuestas del usuario (local)
+const respuestas = ref({
+  bebida: [],
+  sabores: [],
+  estilo: []
 })
+
+// Estado para saber si mostrar preguntas o resultados
+const mostrarResultados = ref(false)
+
+function enviarRespuestas() {
+  // Guardar en store (opcional)
+  store.respuestas = respuestas.value
+  // Cambiar estado para mostrar resultados
+  mostrarResultados.value = true
+}
 </script>
 
 <template>
-  <div class="max-w-4xl mx-auto p-4 space-y-6">
-    <h1 class="text-3xl font-bold text-center mb-6">Tus Recomendaciones 🍹</h1>
-    <div v-if="recomendaciones.length" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div
-        v-for="jugo in recomendaciones"
-        :key="jugo.slug"
-        class="border rounded-lg p-4 shadow hover:shadow-lg transition"
-      >
-        <img :src="jugo.imagen" alt="" class="rounded mb-4">
-        <h2 class="text-xl font-semibold">{{ jugo.title }}</h2>
-        <p class="text-sm text-gray-600">{{ jugo.descripcion }}</p>
-        <p class="text-green-700 font-bold mt-2">$ {{ jugo.precio }}</p>
-      </div>
-    </div>
-    <div v-else class="text-center text-gray-500">
-      No encontramos jugos con esas preferencias 😢
+  <div
+    v-if="store.backgrounds?.recomendaciones"
+    class="min-h-screen bg-cover bg-center p-8"
+    :style="`background-image: url(${store.backgrounds.recomendaciones});`"
+  >
+    <div class="max-w-xl mx-auto bg-white bg-opacity-80 p-6 rounded-lg shadow-lg">
+      <h1 class="text-3xl font-bold text-yellow-800 mb-6 text-center">Tus Recomendaciones 🍹</h1>
+
+      <template v-if="!mostrarResultados">
+        <!-- Preguntas -->
+        <div class="space-y-6">
+          <div>
+            <h2 class="font-semibold mb-2">¿Cómo prefieres tu bebida?</h2>
+            <div class="flex flex-wrap gap-2">
+              <label v-for="op in opciones.bebida" :key="op" class="cursor-pointer px-3 py-1 border rounded-full select-none" :class="{ 'bg-yellow-300': respuestas.bebida.includes(op) }">
+                <input type="checkbox" :value="op" v-model="respuestas.bebida" class="hidden" />
+                {{ op }}
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="font-semibold mb-2">¿Qué sabores prefieres?</h2>
+            <div class="flex flex-wrap gap-2">
+              <label v-for="op in opciones.sabores" :key="op" class="cursor-pointer px-3 py-1 border rounded-full select-none" :class="{ 'bg-yellow-300': respuestas.sabores.includes(op) }">
+                <input type="checkbox" :value="op" v-model="respuestas.sabores" class="hidden" />
+                {{ op }}
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="font-semibold mb-2">¿Cómo te gusta el jugo?</h2>
+            <div class="flex flex-wrap gap-2">
+              <label v-for="op in opciones.estilo" :key="op" class="cursor-pointer px-3 py-1 border rounded-full select-none" :class="{ 'bg-yellow-300': respuestas.estilo.includes(op) }">
+                <input type="checkbox" :value="op" v-model="respuestas.estilo" class="hidden" />
+                {{ op }}
+              </label>
+            </div>
+          </div>
+
+          <button
+            @click="enviarRespuestas"
+            class="mt-6 w-full py-3 bg-yellow-500 text-white font-bold rounded-full hover:bg-yellow-600 transition"
+          >
+            Recomiéndame
+          </button>
+        </div>
+      </template>
+
+      <template v-else>
+        <!-- Mostrar resultados -->
+        <div class="text-yellow-800 space-y-4">
+          <h2 class="text-xl font-semibold">Basado en tus respuestas:</h2>
+          <ul>
+            <li><strong>Bebida:</strong> {{ respuestas.bebida.join(', ') || 'N/A' }}</li>
+            <li><strong>Sabores:</strong> {{ respuestas.sabores.join(', ') || 'N/A' }}</li>
+            <li><strong>Estilo:</strong> {{ respuestas.estilo.join(', ') || 'N/A' }}</li>
+          </ul>
+
+          <button
+            @click="mostrarResultados = false"
+            class="mt-6 px-6 py-2 bg-gray-300 rounded hover:bg-gray-400"
+          >
+            Cambiar respuestas
+          </button>
+        </div>
+      </template>
     </div>
   </div>
 </template>

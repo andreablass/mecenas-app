@@ -1,4 +1,3 @@
-// stores/useJugosStore.js
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import axios from 'axios'
@@ -13,6 +12,17 @@ export const dataPagesStore = defineStore('jugos', () => {
   const backgrounds = ref(null)
   const loading = ref(false)
   const error = ref(null)
+
+  // 🔥 NUEVO: Respuestas del quiz
+  const respuestas = ref({
+    bebida: [],
+    sabores: [],
+    estilo: []
+  })
+
+  function setRespuestas(data) {
+    respuestas.value = data
+  }
 
   async function fetchAllPages() {
     loading.value = true
@@ -43,6 +53,8 @@ export const dataPagesStore = defineStore('jugos', () => {
     backgrounds,
     loading,
     error,
-    fetchAllPages
+    fetchAllPages,
+    respuestas, // 👈 agrega respuestas
+    setRespuestas // 👈 agrega setter
   }
 })
