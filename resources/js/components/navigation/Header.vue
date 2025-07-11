@@ -5,11 +5,11 @@ import { dataPagesStore } from '@/stores/dataPagesStore'
 
 const store = dataPagesStore()
 
-onBeforeMount(() => {
-  if (!store.home) {
-    store.fetchAllPages()
-  }
-})
+//onBeforeMount(() => {
+  //if (!store.home) {
+    //store.fetchAllPages()
+  //}
+//})
 </script>
 
 <template>

@@ -3,11 +3,11 @@ import { ref, onBeforeMount } from 'vue'
 import axios from 'axios'
 import { dataPagesStore } from '@/stores/dataPagesStore'
 
-onBeforeMount(() => {
-  if (!store.backgrounds) {
-    store.fetchAllPages()
-  }
-})
+//onBeforeMount(() => {
+  //if (!store.backgrounds) {
+   // store.fetchAllPages()
+  //}
+//})
 const store = dataPagesStore()
 const menuImages = ref({})
 

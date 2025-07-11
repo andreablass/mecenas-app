@@ -23,7 +23,7 @@ return [
     'api' => env('KIRBY_API', true),
     'cookieName' => env('KIRBY_SESSION', 'kirby_session'),
     'hooks' => require_once 'hooks.php',
-    'routes' => require __DIR__ . '/apiRoutes.php',
+    'routes' => require __DIR__ . '/routes.php',
     'beebmx.kirby-blade.bootstrap' => env('KIRBY_BLADE_BOOTSTRAP', true),
     'beebmx.kirby-blade.views' => $storage . '/views',
     'email' => [

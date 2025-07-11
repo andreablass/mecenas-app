@@ -1,15 +1,14 @@
 <?php
 
+use App\Actions\GetDataPages;
+use Kirby\Cms\Page;
 use Kirby\Toolkit\Tpl;
 
 return [
     [
-        'pattern' => '(:all)',
+        'pattern' => ['menu', 'menu/(:all)'],
         'action'  => function () {
-            return new \Kirby\Cms\Response(
-                Tpl::load(kirby()->root('templates') . '/index.blade.php'),
-                'text/html'
-            );
+            return new Page(['template' => 'app' , 'slug' => 'menu', 'content' => ['title' => 'menu', 'dataContent' => (new App\Actions\GetDataPages)() ]]);
         }
     ]
 ];

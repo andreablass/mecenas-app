@@ -30,11 +30,11 @@ function enviarRespuestas() {
 </script>
 
 <template>
-  <div
+ <!--s <div
     v-if="store.backgrounds?.recomendaciones"
     class="min-h-screen bg-cover bg-center p-8"
     :style="`background-image: url(${store.backgrounds.recomendaciones});`"
-  >
+  > -->
     <div class="max-w-xl mx-auto bg-white bg-opacity-80 p-6 rounded-lg shadow-lg">
       <h1 class="text-3xl font-bold text-yellow-800 mb-6 text-center">Tus Recomendaciones 🍹</h1>
 
@@ -79,26 +79,7 @@ function enviarRespuestas() {
           </button>
         </div>
       </template>
-
-      <template v-else>
-        <!-- Mostrar resultados -->
-        <div class="text-yellow-800 space-y-4">
-          <h2 class="text-xl font-semibold">Basado en tus respuestas:</h2>
-          <ul>
-            <li><strong>Bebida:</strong> {{ respuestas.bebida.join(', ') || 'N/A' }}</li>
-            <li><strong>Sabores:</strong> {{ respuestas.sabores.join(', ') || 'N/A' }}</li>
-            <li><strong>Estilo:</strong> {{ respuestas.estilo.join(', ') || 'N/A' }}</li>
-          </ul>
-
-          <button
-            @click="mostrarResultados = false"
-            class="mt-6 px-6 py-2 bg-gray-300 rounded hover:bg-gray-400"
-          >
-            Cambiar respuestas
-          </button>
-        </div>
-      </template>
     </div>
-  </div>
+  <!--</div>-->
 </template>
 

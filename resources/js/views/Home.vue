@@ -5,12 +5,12 @@ import { dataPagesStore } from '@/stores/dataPagesStore'
 
 const store = dataPagesStore()
 
-onBeforeMount(() => {
+//onBeforeMount(() => {
   // Solo hace fetch si aún no hay datos
-  if (!store.home) {
-    store.fetchAllPages()
-  }
-})
+  //if (!store.home) {
+    //store.fetchAllPages()
+  //}
+//})
 </script>
 
 <template>
