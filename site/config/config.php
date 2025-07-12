@@ -20,7 +20,9 @@ return [
         'timeout' => (int) env('KIRBY_SESSION_TIMEOUT', 1800),
         'cookieName' => env('KIRBY_SESSION', 'kirby_session'),
     ],
-    'api' => env('KIRBY_API', true),
+    'api' => [
+        'routes' => require_once __DIR__.'/apiRoutes.php',
+    ],
     'cookieName' => env('KIRBY_SESSION', 'kirby_session'),
     'hooks' => require_once 'hooks.php',
     'routes' => require __DIR__ . '/routes.php',

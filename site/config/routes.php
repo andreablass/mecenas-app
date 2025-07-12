@@ -8,7 +8,14 @@ return [
     [
         'pattern' => ['menu', 'menu/(:all)'],
         'action'  => function () {
-            return new Page(['template' => 'app' , 'slug' => 'menu', 'content' => ['title' => 'menu', 'dataContent' => (new App\Actions\GetDataPages)() ]]);
+            return new Page([
+                'template' => 'app',
+                'slug' => 'menu',
+                'content' => [
+                    'title' => 'menu',
+                    'dataContent' => (new App\Actions\GetDataPages)()
+                ]
+            ]);
         }
     ]
 ];

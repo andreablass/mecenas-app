@@ -10,7 +10,6 @@
     @endif
 </head>
 <body>
-    <div id="app"></div> {{-- Aquí Vue montará todo el contenido --}}
 
 </body>
 </html>
