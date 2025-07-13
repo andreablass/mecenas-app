@@ -13,7 +13,7 @@ export const dataPagesStore = defineStore('jugos', {
     }
   }),
 
-  // 🔥 GETTERS: Computed properties (puedes hacer filtros o derivados)
+  // GETTERS: Computed properties (puedes hacer filtros o derivados)
   getters: {
     clasicos: (state) => state.data.clasicos || [],
     especiales: (state) => state.data.especiales || [],
@@ -24,14 +24,14 @@ export const dataPagesStore = defineStore('jugos', {
     backgrounds: (state) => state.data.backgrounds || {}
   },
 
-  // ⚡ ACTIONS: Métodos para cambiar el estado o hacer llamadas API
+  //  ACTIONS: Métodos para cambiar el estado o hacer llamadas API
   actions: {
-    // ✅ Actualiza respuestas del quiz
+    //  Actualiza respuestas del quiz
     setRespuestas(data) {
       this.respuestas = data
     },
 
-    // 🔄 Si necesitas volver a cargar datos desde API
+    //  Si necesitas volver a cargar datos desde API
     async fetchAllPages() {
       this.loading = true
       this.error = null
