@@ -1,8 +1,11 @@
 <script setup>
-import { onBeforeMount } from 'vue'
+import { ref, onBeforeMount } from 'vue'
 import { dataPagesStore } from '@/stores/dataPagesStore'
+import IngredientesModal from '@/components/IngredientesModal.vue'
 
 const store = dataPagesStore()
+const showModal = ref(false)
+const selectedItem = ref(null) // guarda el jugo seleccionado
 
 onBeforeMount(() => {
   // Solo hace fetch si no hay datos
@@ -10,6 +13,12 @@ onBeforeMount(() => {
     store.fetchAllPages()
   }
 })
+
+// Abrir modal con datos del jugo seleccionado
+function openModal(item) {
+  selectedItem.value = item
+  showModal.value = true
+}
 </script>
 
 <template>
@@ -36,7 +45,7 @@ onBeforeMount(() => {
           </div>
 
           <button
-            
+            @click="openModal(item)"
             class="text-sm text-blue-600 underline mb-2"
           >
             Ver ingredientes
@@ -63,4 +72,13 @@ onBeforeMount(() => {
     </div>
   </div>
 
+  <!-- Modal dinámico -->
+  <IngredientesModal
+    v-model="showModal"
+    v-if="selectedItem"
+    :title="selectedItem.title"
+    :descripcion="selectedItem.descripcion"
+    :sugerencia="selectedItem.sugerencia"
+    :imagen="selectedItem.imagen"
+  />
 </template>
